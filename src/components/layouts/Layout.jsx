@@ -1,3 +1,6 @@
+import { HomePage } from "../../pages/home";
+import Categori from "../categori/Categori";
+import Karzinka from "../karzinka/Karzinka";
 import { Navbar } from "../navbar";
 
 export const Layout = () => {
@@ -5,7 +8,9 @@ export const Layout = () => {
     <div className="wrapper">
       <div className="main-layout__row">
         <Navbar />
-      </div>
+
+            <HomePage/>
+     </div>
     </div>
   );
 };
