@@ -1,0 +1,13 @@
+@import "./global/settings";
+@import "./global/normalize";
+@import "./global/variables";
+@import "./mixins/mixins";
+
+.wrapper {
+    position: relative;
+    width: 100%;
+
+    .main__layout-row {
+        
+    }
+}
