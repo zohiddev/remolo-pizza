@@ -7,7 +7,30 @@
     position: relative;
     width: 100%;
 
-    .main__layout-row {
-        
+    .main-layout__row {
+        width: 100%;
+        .sidebar {
+            width: 150px;
+            height: 100vh;
+            background-color: $sidebar-bg;
+            &__col {
+                @include flex(center, space-between, column);
+                width: 100%;
+                height: auto;
+                padding-top: 50px;
+                .sidebar__icons {
+                    &:not(:last-child) {
+                        margin-bottom: 60px;
+                    &:nth-child(2) {
+                        color: $red-color;
+                    }
+                    }
+                    img  {
+                        width: 45px;
+                        height: 45px;
+                    }
+                }
+            }
+        }
     }
 }
