@@ -1,6 +1,7 @@
+import { Layout } from "../../components"
 
 export const HomePage = () => {
   return (
-    <div>index</div>
+    <Layout/>
   )
 }

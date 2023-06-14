@@ -10,6 +10,7 @@
     .main-layout__row {
         @include flex(center, space-between, row);
         width: 100%;
+        // Sidebar
         .sidebar {
             width: 115px;
             height: 100vh;
@@ -33,6 +34,76 @@
                 }
             }
         }
+        // Main
+        .main {
+            width: 1200px;
+            height: 100vh;
+            padding: 33px 45px 0;
+            &-row {
+                width: 100%;
+                @include flex(flex-start, center, column);
+                .main__search {
+                    width: 100%;
+                    height: 50px;
+                    @include flex(center, flex-start, row);
+                    border: none;
+                    border-radius: 10px;
+                    background-color: $sidebar-bg;
+                    padding: 13px 24px;
+                    margin-bottom: 40px;
+                    img {
+                        width: 23px;
+                        height: 23px;
+                        margin-right: 18px;
+                    }
+                    input {
+                        width: 90%;
+                        height: 100%;
+                        border: none;
+                        @include font(18, 18, 500, 24px);
+                        color: $black-color;
+                        background-color: transparent;
+                        &::placeholder {
+                            @include font(16, 16, 400, 24px);
+                            color: $light-gray;
+                        }
+                        &:focus {
+                            outline: none
+                        }
+                    }
+                }
+                .main__title {
+                    @include flex(flex-start, center, column);
+                    width: 100%;
+                    margin-bottom: 27px;
+                    &-text1 {
+                        @include font(26, 26, 700, 39px);
+                        color: $black-color;
+                    }
+                    &-text2 {
+                        @include font(16, 16, 600, 24px);
+                        color: $light-gray;
+                    }
+                }
+                .main__category {
+                    width: 100%;
+                    @include flex(center, space-between, row);
+                    &-item {
+                        @include flex(center, center, row);
+                        img {
+                            width: 24px;
+                            height: 24px;
+                            margin-right: 15px
+                        }
+                        &-text {
+                            @include font(18, 18, 600, 27px);
+                            
+                        }
+                    }
+                }
+            }
+        }
+        //Basket
         @import "./basket.scss";
     }
 }

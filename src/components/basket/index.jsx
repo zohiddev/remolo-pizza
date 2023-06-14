@@ -1,6 +1,6 @@
 import React from 'react'
 import del_img from "../../assets/images/icons/delete.svg"
-import Product from './product';
+import Product from './Product';
 
 function Basket() {
   return (
