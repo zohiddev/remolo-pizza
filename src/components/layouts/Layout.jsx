@@ -1,3 +1,4 @@
+import Basket from "../basket";
 import Navbar from "../sidebar/index";
 
 export const Layout = () => {
@@ -5,6 +6,7 @@ export const Layout = () => {
     <div className="wrapper">
       <div className="main-layout__row">
         <Navbar/>
+        <Basket/>
       </div>
     </div>
   );

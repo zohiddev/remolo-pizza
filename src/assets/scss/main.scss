@@ -8,9 +8,10 @@
     width: 100%;
 
     .main-layout__row {
+        @include flex(center, space-between, row);
         width: 100%;
         .sidebar {
-            width: 150px;
+            width: 115px;
             height: 100vh;
             background-color: $sidebar-bg;
             &__col {
@@ -26,11 +27,12 @@
                     }
                     }
                     img  {
-                        width: 45px;
-                        height: 45px;
+                        width: 40px;
+                        height: 40px;
                     }
                 }
             }
         }
+        @import "./basket.scss";
     }
 }

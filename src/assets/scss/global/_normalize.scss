@@ -1,3 +1,4 @@
+@import "../global/variables";
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,9 @@ ul li {
 a {
   text-decoration: none;
   color: inherit;
+}
+a, span, button {
+  font-family: $main-font;
 }
 
 button {
