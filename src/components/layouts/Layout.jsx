@@ -1,4 +1,5 @@
 import { Navbar } from "../navbar";
+import { Cart } from "../cart";
 
 export const Layout = () => {
   return (

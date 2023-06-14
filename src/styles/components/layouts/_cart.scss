@@ -1,0 +1,98 @@
+@use '../../../assets/scss/mixins/mixins';
+@use '../../../assets/scss/global/functions' as fn;
+@use '../../../assets/scss/global/variables' as var;
+
+/****************
+** Cart Styles **
+****************/
+.cart {
+    position: sticky;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: space-between;
+    max-width: 440px;
+    width: 100%;
+    height: 100vh;
+    padding: 24px;
+    background-color: var.$secondary-bg--color;
+
+    &__title {
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 39px;
+        color: var.$black--color;
+    }
+
+    &__action-row {
+        @include mixins.flex(flex-start, space-between);
+    }
+
+    .text__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__description {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        color: var.$black--color;
+    }
+
+    &__quantity {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: var.$dark-grey--color;
+    }
+
+    .products__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-height: 55vh;
+        height: 100%;
+        position: relative;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__checkout {
+        display: flex;
+        flex-direction: column;
+
+        &-info {
+            @include mixins.flex(center, space-between);
+
+            &:not(:first-child) {
+                margin-top: 3px;
+            }
+
+            .text {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 21px;
+                color: var.$secondary-grey--color;
+            }
+
+            .price {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 24px;
+                color: var.$black--color;
+            }
+        }
+    }
+
+    button.button {
+        margin-top: 16px;
+    }
+}

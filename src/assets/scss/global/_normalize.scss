@@ -14,7 +14,11 @@ a {
   color: inherit;
 }
 
-button {
+button,
+select,
+option {
+  outline: none;
+  border: none;
   cursor: pointer;
 }
 
@@ -22,6 +26,12 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+input {
+  background: transparent;
+  outline: none;
+  border: none;
 }
 
 /* Firefox */

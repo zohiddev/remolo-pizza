@@ -1,0 +1,136 @@
+@use '../../../assets/scss/mixins/mixins';
+@use '../../../assets/scss/global/functions' as fn;
+@use '../../../assets/scss/global/variables' as var;
+
+/******************
+** Navbar Styles **
+******************/
+.navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    position: sticky;
+    flex-shrink: 0;
+    top: 0;
+    left: 0;
+    max-width: 342px;
+    width: 100%;
+    height: 100vh;
+    padding: 30px 0;
+    background-color: var.$secondary-bg--color;
+    transition: all .1s ease;
+    overflow: hidden;
+
+    &__logo-row {
+        @include mixins.flex(center, space-between);
+        position: relative;
+        padding: 0 25px;
+        min-height: 63px;
+    }
+
+    &__logo {
+        @include mixins.flex(flex-end, unset);
+        gap: 14px;
+        position: relative;
+        height: 100%;
+
+        .logo {
+            width: 76px;
+            height: 100%;
+        }
+
+        .logo-text {
+            width: 134px;
+            height: 38px;
+        }
+    }
+
+    .icon.burger-menu {
+        @include mixins.flex(flex-end, space-between);
+        flex-direction: column;
+        position: relative;
+        width: 30px;
+        height: 25px;
+
+        .line {
+            width: 100%;
+            border: 2px solid var.$icon--color;
+            border-radius: 5px;
+
+            &:last-child {
+                width: 50%;
+            }
+        }
+    }
+
+    &__pages {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        position: relative;
+    }
+
+    &__page {
+        @include mixins.flex(center, unset);
+        gap: 40px;
+        position: relative;
+        width: 100%;
+        height: 50px;
+        padding: 0 25px;
+        cursor: pointer;
+
+        &.active {
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 4px;
+                height: 100%;
+                border-radius: 5px;
+                background-color: var.$main--color;
+            }
+
+            svg path {
+                fill: var.$main--color;
+            }
+
+            .navbar__text {
+                color: var.$main--color;
+            }
+        }
+    }
+
+    &__icon {
+        position: relative;
+        width: 36px;
+        height: 36px;
+
+        svg path {
+            fill: var.$icon--color;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        color: var.$icon--color;
+    }
+
+    &.close {
+        max-width: 90px;
+
+        .navbar__logo {
+            display: none;
+        }   
+
+        .navbar__text {
+            display: none;
+        }
+
+        .icon.burger-menu {
+            align-items: flex-start;
+        }
+    }
+}
