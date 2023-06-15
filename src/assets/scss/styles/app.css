@@ -41,7 +41,13 @@ body {
     width: 440px;
     height: 100vh;
     background: #F6F6F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
+
 
 .CategoriKarzinka {
     display: flex;
