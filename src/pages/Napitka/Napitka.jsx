@@ -1,42 +1,49 @@
 import React from "react";
 import MenuIcon from '../../icons/MenuIcon'
 import SearchIcon from '../../icons/SearchIcon'
-import PizzaIcon from '../../icons/PizzaIcon'
+import PizzaIconTwo from '../../icons/PizzaIconTwo'
 import SomsaIcon from '../../icons/SomsaIcon'
-import NapitkaIcon from '../../icons/NapitkaIcon'
+import NapitkaIconTwo from '../../icons/NapitkaIconTwo'
 import DisertIcon from '../../icons/DisertIcon'
-import PhotoOne from '../../img/Rectangle 19.png'
-import PhotoTwo from '../../img/Rectangle 19 (1).png'
-import PhotoThree from '../../img/Rectangle 19 (2).png'
-import PhotoFour from '../../img/Rectangle 19 (3).png'
-import KorzinkaIcon from '../../icons/KorzinkaIcon'
+import PhotoOne from '../../img/Rectangle 19 (7).png'
+import PhotoTwo from '../../img/Rectangle 19 (8).png'
+import PhotoThree from '../../img/Rectangle 19 (9).png'
+import PhotoFour from '../../img/Rectangle 19 (10).png'
+import PhotoFive from '../../img/Rectangle 19 (11).png'
+import KorzinkaIcon from "../../icons/KorzinkaIcon";
 
-export const HomePage = () => {
+export const Napitka = () => {
   const routes = [
     {
       id: 1,
       img: PhotoOne,
-      aboute: "Pizza muzzarella",
-      price: "$ 1200.00"
+      aboute: "Cerveza 437ml",
+      price: "$ 105.00"
     },
     {
       id: 2,
       img: PhotoTwo,
-      aboute: "Pizza pepperoni",
-      price: "$ 1100.00"
+      aboute: "Agua 500ml",
+      price: "$ 95.00"
     },
     {
       id: 3,
       img: PhotoThree,
-      aboute: "Pizza napolitana",
-      price: "$ 1050.oo"
+      aboute: "Coca-Cola 500ml",
+      price: "$ 120.00"
     },
     {
-        id: 4,
-        img: PhotoFour,
-        aboute: "Pizza napolitana",
-        price: "$ 1050.oo"
-      },
+      id: 4,
+      img: PhotoFour,
+      aboute: "Pepsi 500ml",
+      price: "$ 100.00"
+    },
+    {
+      id: 5,
+      img: PhotoFive,
+      aboute: "Cepita naranja 1L",
+      price: "$ 170.00"
+    },
   ]
   return (
     <div className="navbar">
@@ -45,13 +52,13 @@ export const HomePage = () => {
         <SearchIcon />
       </div>
       <div className="title">
-        <h1 className="title__h1">Empanadas</h1>
-        <p className="title__p">Elige nuestras deliciosas empanadas </p>
+        <h1 className="title__h1">Bebidas</h1>
+        <p className="title__p">Elige nuestras bebidas refrescantes </p>
       </div>
       <div className="box__menu">
-        <a href="/"><div className="box__icon__pizza"><PizzaIcon /></div></a>
+        <a href="/"><div className="box__icon"><PizzaIconTwo /></div></a>
         <a href="/Somsa"><div className="box__icon"><SomsaIcon /></div></a>
-        <a href="/Napitka"><div className="box__icon"><NapitkaIcon /></div></a>
+        <a href="/Napitka"><div className="box__icon__napitka"><NapitkaIconTwo /></div></a>
         <a href="/Disert"><div className="box__icon"><DisertIcon /></div></a>
       </div>
       <div className="box__card">
@@ -60,14 +67,14 @@ export const HomePage = () => {
             <img src={item.img} width="156px" height="157px" />
             <div className="card__title">
               <h1 className="card__aboute">{item.aboute}</h1>
-              <h1 className="card__price">{item.price}</h1>
+              <h1 className="card__price" style={{ color: "#50C2E7" }}>{item.price}</h1>
             </div>
             <div className="box__order">
-              <div className="order">+</div>
+              <div className="order" style={{ background: "#fff", color: "black" }}>+</div>
             </div>
           </div>
         )))}
-        <div className="korzinka__pizza">
+        <div className="korzinka__napitka">
           <div className="korzinka__title">
             <h3>4 Items</h3>
             <h3>$ 1550.00</h3>

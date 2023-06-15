@@ -1,5 +1,10 @@
-import React from "react";
+import React from 'react'
 
-export const Navbar = () => {
-  return <div className="navbar">navbar</div>;
-};
+function index() {
+  return (
+    <div>index</div>
+  )
+}
+
+export default index
+
