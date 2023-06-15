@@ -4,6 +4,7 @@ import { pagesCategories } from "../../data/pagesCategories";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activePage, setActivePage] = useState(1);
 
   const clickHandler = () => {
     isOpen ? setIsOpen(false) : setIsOpen(true);
@@ -29,7 +30,9 @@ export const Navbar = () => {
       <ul className="navbar__pages">
         {pagesCategories.map((pageCategory) => (
           <li
-            className={`navbar__page ${pageCategory.id === 1 ? "active" : ""}`}
+            className={`navbar__page ${
+              pageCategory.id === activePage ? "active" : ""
+            }`}
             key={pageCategory.id}
           >
             <Icon additionalClasses={["navbar__icon"]}>

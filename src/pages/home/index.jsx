@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Input, Icon, ProductCard, CartButton } from "..";
 import { categoriesData } from "../../data/categories";
 import products from "../../data/products.json";
 
 export const HomePage = () => {
+  const [activeCategory, setActiveCategory] = useState(1);
+
   return (
     <main className="main home-page">
       <div className="fixed">
@@ -24,7 +27,11 @@ export const HomePage = () => {
         </p>
         <div className="categories">
           {categoriesData.map((category) => (
-            <div className={`category ${category.id === 1 ? "active" : ""}`}>
+            <div
+              className={`category ${
+                category.id === activeCategory ? "active" : ""
+              }`}
+            >
               <Icon>{category.icon}</Icon>
               <h4 className="name">{category.name}</h4>
             </div>
