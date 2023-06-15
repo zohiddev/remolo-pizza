@@ -27,7 +27,6 @@ export const ProductCardMini = ({
           name="quantity"
           id="quantity"
           className="product-card--mini__quantity"
-          value={quantity}
         >
           <option value={quantity} selected>
             {quantity}

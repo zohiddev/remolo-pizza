@@ -27,7 +27,7 @@ function App() {
         discount={productsCartData[0].discount}
         quantity={1}
       /> */}
-      <Navbar />
+      <Layout />
       <HomePage />
       <Cart products={productsCartData} />
     </>

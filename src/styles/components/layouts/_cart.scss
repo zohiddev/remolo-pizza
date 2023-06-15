@@ -19,6 +19,12 @@
     padding: 24px;
     background-color: var.$secondary-bg--color;
 
+    @include mixins.media(1440) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
     &__title {
         font-size: 26px;
         font-weight: 700;

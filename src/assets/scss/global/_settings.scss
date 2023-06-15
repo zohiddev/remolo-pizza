@@ -47,6 +47,9 @@ img {
 #root {
   @include mixins.flex(flex-start, unset);
   position: relative;
+  max-height: 100vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 .container {

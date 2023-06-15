@@ -1,7 +1,7 @@
 import { Icon } from "../ui/Icon";
+import { Button } from "../ui/Button";
 import { ProductCardMini } from "../card/ProductCardMini";
 import { formatCurrency } from "..";
-import { Button } from "../ui/Button";
 
 export const Cart = ({ products }) => {
   const order = 100;

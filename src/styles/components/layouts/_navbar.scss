@@ -21,6 +21,11 @@
     transition: all .1s ease;
     overflow: hidden;
 
+    @include mixins.media(920) {
+        position: absolute;
+        left: -100%;
+    }
+
     &__logo-row {
         @include mixins.flex(center, space-between);
         position: relative;
@@ -103,6 +108,7 @@
 
     &__icon {
         position: relative;
+        display: inline-flex;
         width: 36px;
         height: 36px;
 
