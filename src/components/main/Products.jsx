@@ -14,7 +14,7 @@ function Products() {
                                 <span className="main__product-name">{item.name}</span>
                                 <span className="main__product-price">$ {item.price}.00</span>
                             </div>
-                            <button>+</button>
+                            <button className="main__product-btn">+</button>
                         </div>
                     </div>
                 )

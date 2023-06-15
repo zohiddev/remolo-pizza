@@ -34,6 +34,7 @@
                 &-img {
                     border: none;
                     background-color: transparent;
+                    cursor: pointer;
                 }
             }
             &-items {
@@ -86,6 +87,7 @@
                     }
                     &-remove {
                         padding: 12px;
+                        cursor: pointer;
                     }
                 }
             }
