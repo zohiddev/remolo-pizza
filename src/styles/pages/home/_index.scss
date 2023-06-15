@@ -12,20 +12,20 @@
     flex: 1 1 auto;
     max-height: 100vh;
     height: 100%;
-    padding: 33px 45px;
-    padding-top: 0;
-
-    @include mixins.media(630) {
-        padding: 33px 24px;
-    }
 
     .fixed {
         position: sticky;
         top: 0;
-        padding-top: 33px;
+        width: 100%;
+        padding: 33px 45px;
         padding-bottom: 20px;
         background-color: #fff;
         z-index: 99;
+
+        @include mixins.media(630) {
+            padding-left: 24p;
+            padding-right: 24px;
+        }
     }
 
     .input.search {
@@ -53,7 +53,7 @@
         color: var.$icon--color;
     }
 
-    .categories {
+    .categories__list {
         @include mixins.flex(center, space-between);
         gap: 15px;
         position: relative;
@@ -139,19 +139,26 @@
         }
     }
 
-    .products {
+    .products__list {
         @include mixins.flex(flex-start, unset);
         flex: 1 1 auto;
         flex-wrap: wrap;
         gap: 20px;
         position: relative;
         margin-top: 35px;
+        padding: 0 45px;
+        padding-bottom: 24px;
         overflow-y: scroll;
         scrollbar-width: none;
         -ms-overflow-style: none;
 
         @include mixins.media(1440) {
             padding-bottom: 80px;
+        }
+
+        @include mixins.media(630) {
+            padding-left: 24p;
+            padding-right: 24px;
         }
 
         &::-webkit-scrollbar {

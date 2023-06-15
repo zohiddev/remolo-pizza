@@ -1,5 +1,5 @@
 import { Layout } from "./layouts/Layout";
-import { formatCurrency } from '../utils/formatCurrency';
-import { getAbsolutePrice } from '../utils/getAbsolutePrice';
+import { formatCurrency } from '../helpers/formatCurrency';
+import { getAbsolutePrice } from '../helpers/getAbsolutePrice';
 
 export { Layout, formatCurrency, getAbsolutePrice };

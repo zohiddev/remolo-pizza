@@ -23,8 +23,8 @@ export const ProductCard = ({ id, image, name, price, discount }) => {
             <path
               d="M6.28571 11.5714V6.28571M6.28571 6.28571V1M6.28571 6.28571H11.5714M6.28571 6.28571H1"
               stroke="#AEAEAE"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
           </svg>
         </Icon>

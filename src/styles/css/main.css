@@ -389,7 +389,7 @@
   line-height: 24px;
   color: #6B6B6B;
 }
-.cart .products__wrapper {
+.cart .cart-products__list {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -400,7 +400,7 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.cart .products__wrapper::-webkit-scrollbar {
+.cart .cart-products__list::-webkit-scrollbar {
   display: none;
 }
 .cart__checkout {
@@ -582,21 +582,21 @@ img {
   flex: 1 1 auto;
   max-height: 100vh;
   height: 100%;
-  padding: 33px 45px;
-  padding-top: 0;
-}
-@media only screen and (max-width: 630px) {
-  .home-page {
-    padding: 33px 24px;
-  }
 }
 .home-page .fixed {
   position: sticky;
   top: 0;
-  padding-top: 33px;
+  width: 100%;
+  padding: 33px 45px;
   padding-bottom: 20px;
   background-color: #fff;
   z-index: 99;
+}
+@media only screen and (max-width: 630px) {
+  .home-page .fixed {
+    padding-left: 24p;
+    padding-right: 24px;
+  }
 }
 .home-page .input.search {
   width: 100%;
@@ -619,7 +619,7 @@ img {
   line-height: 24px;
   color: #A6A6A6;
 }
-.home-page .categories {
+.home-page .categories__list {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -633,10 +633,10 @@ img {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.home-page .categories::-webkit-scrollbar {
+.home-page .categories__list::-webkit-scrollbar {
   display: none;
 }
-.home-page .categories .category {
+.home-page .categories__list .category {
   display: flex;
   align-items: center;
   justify-content: unset;
@@ -647,10 +647,10 @@ img {
   cursor: pointer;
 }
 @media only screen and (max-width: 630px) {
-  .home-page .categories .category .name {
+  .home-page .categories__list .category .name {
     display: none;
   }
-  .home-page .categories .category .icon {
+  .home-page .categories__list .category .icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -659,32 +659,32 @@ img {
     background-color: #E8E8E8;
     border-radius: 16px;
   }
-  .home-page .categories .category::after, .home-page .categories .category::before {
+  .home-page .categories__list .category::after, .home-page .categories__list .category::before {
     display: none;
   }
-  .home-page .categories .category.active .icon {
+  .home-page .categories__list .category.active .icon {
     background-color: #FF4E4E;
   }
-  .home-page .categories .category.active .icon svg path {
+  .home-page .categories__list .category.active .icon svg path {
     fill: #fff;
   }
 }
-.home-page .categories .category svg path {
+.home-page .categories__list .category svg path {
   fill: #353535;
 }
-.home-page .categories .category .name {
+.home-page .categories__list .category .name {
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 150%;
   color: #353535;
 }
-.home-page .categories .category.active svg path {
+.home-page .categories__list .category.active svg path {
   fill: #FF4E4E;
 }
-.home-page .categories .category.active .name {
+.home-page .categories__list .category.active .name {
   color: #FF4E4E;
 }
-.home-page .categories .category.active::after {
+.home-page .categories__list .category.active::after {
   content: "";
   position: absolute;
   left: 0;
@@ -693,7 +693,7 @@ img {
   border: 1px solid #FF4E4E;
   border-radius: 5px;
 }
-.home-page .products {
+.home-page .products__list {
   display: flex;
   align-items: flex-start;
   justify-content: unset;
@@ -702,24 +702,32 @@ img {
   gap: 20px;
   position: relative;
   margin-top: 35px;
+  padding: 0 45px;
+  padding-bottom: 24px;
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 @media only screen and (max-width: 1440px) {
-  .home-page .products {
+  .home-page .products__list {
     padding-bottom: 80px;
   }
 }
-.home-page .products::-webkit-scrollbar {
+@media only screen and (max-width: 630px) {
+  .home-page .products__list {
+    padding-left: 24p;
+    padding-right: 24px;
+  }
+}
+.home-page .products__list::-webkit-scrollbar {
   display: none;
 }
 @media only screen and (max-width: 630px) {
-  .home-page .products {
+  .home-page .products__list {
     gap: 10px;
     justify-content: space-between;
   }
-  .home-page .products .product-card {
+  .home-page .products__list .product-card {
     width: calc(50% - 10px);
   }
 }

@@ -1,7 +1,13 @@
 import { useState } from "react";
-import { Input, Icon, ProductCard, CartButton } from "..";
+import {
+  Input,
+  Icon,
+  ProductsList,
+  CardButtonMobile,
+  CategoriesList,
+} from "..";
 import { categoriesData } from "../../data/categories";
-import products from "../../data/products.json";
+import productsData from "../../data/products.json";
 
 export const HomePage = () => {
   const [activeCategory, setActiveCategory] = useState(1);
@@ -25,45 +31,13 @@ export const HomePage = () => {
         <p className="home-page__description">
           Elige nuestras deliciosas pizzas
         </p>
-        <div className="categories">
-          {categoriesData.map((category) => (
-            <div
-              className={`category ${
-                category.id === activeCategory ? "active" : ""
-              }`}
-            >
-              <Icon>{category.icon}</Icon>
-              <h4 className="name">{category.name}</h4>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="products">
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            image={product.image}
-            name={product.name}
-            price={product.price}
-            discount={product.discount}
-          />
-        ))}
-      </div>
-      <div className="cart-button__wrapper">
-        <CartButton
-          itemsQuantity={4}
-          totalPrice={1550}
-          icon={
-            <Icon>
-              <img
-                src="/src/assets/images/icons/cart-icon.svg"
-                alt="cart icon"
-              />
-            </Icon>
-          }
+        <CategoriesList
+          categoriesData={categoriesData}
+          activeCategory={activeCategory}
         />
       </div>
+      <ProductsList productsData={productsData} />
+      <CardButtonMobile />
     </main>
   );
 };
