@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Box(item) {
+export default function Box({item}) {
   return (
     <div className='Box'>
         <img src={item.img} alt="" />
