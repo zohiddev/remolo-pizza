@@ -8,9 +8,8 @@ export const Layout = () => {
     <div className="wrapper">
       <div className="main-layout__row">
         <Navbar />
-
-            <HomePage/>
-     </div>
+        <HomePage />
+      </div>
     </div>
   );
 };
