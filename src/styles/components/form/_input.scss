@@ -16,8 +16,8 @@
         padding: 12px 24px;
 
         input {
-            height: 100%;
             flex: 1 1 auto;
+            height: 100%;
             font-size: fn.px-to-rem(16px);
             font-weight: 400;
             line-height: fn.px-to-percent(24px);

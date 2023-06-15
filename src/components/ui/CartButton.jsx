@@ -1,13 +1,13 @@
-import formatCurrency from "..";
+import { formatCurrency } from "..";
 
 export const CartButton = ({ itemsQuantity, totalPrice, icon }) => {
   return (
-    <button className="button cart__button">
+    <button className="button cart-button">
       <span className="text__wrapper">
-        <p className="items-quantity cart__button__text">
+        <p className="items-quantity cart-button__text">
           {itemsQuantity} items
         </p>
-        <p className="total-price cart__button__text">
+        <p className="total-price cart-button__text">
           {formatCurrency(totalPrice)}
         </p>
       </span>

@@ -1,4 +1,4 @@
-import { Input, Icon, ProductCard } from "..";
+import { Input, Icon, ProductCard, CartButton } from "..";
 import { categoriesData } from "../../data/categories";
 import products from "../../data/products.json";
 
@@ -42,6 +42,20 @@ export const HomePage = () => {
             discount={product.discount}
           />
         ))}
+      </div>
+      <div className="cart-button__wrapper">
+        <CartButton
+          itemsQuantity={4}
+          totalPrice={1550}
+          icon={
+            <Icon>
+              <img
+                src="/src/assets/images/icons/cart-icon.svg"
+                alt="cart icon"
+              />
+            </Icon>
+          }
+        />
       </div>
     </main>
   );

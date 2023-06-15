@@ -28,9 +28,7 @@ export const ProductCardMini = ({
           id="quantity"
           className="product-card--mini__quantity"
         >
-          <option value={quantity} selected>
-            {quantity}
-          </option>
+          <option value={quantity}>{quantity}</option>
         </select>
         <Icon additionalClasses={["product-card--mini__icon close-icon"]}>
           <svg

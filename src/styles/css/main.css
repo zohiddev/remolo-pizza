@@ -178,6 +178,32 @@
   background-color: #353535;
 }
 
+/***********************
+** Cart Button Styles **
+***********************/
+.cart-button {
+  display: flex;
+  align-items: center;
+  justify-content: unset;
+  gap: 25px;
+  padding: 12px 24px;
+  background-color: #FF4E4E;
+}
+.cart-button .text__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.cart-button__text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: #fff;
+}
+.cart-button svg path {
+  fill: #fff;
+}
+
 /****************
 ** Icon Styles **
 ****************/
@@ -190,10 +216,10 @@
 ******************/
 .navbar {
   display: flex;
+  flex-shrink: 0;
   flex-direction: column;
   gap: 50px;
   position: sticky;
-  flex-shrink: 0;
   top: 0;
   left: 0;
   max-width: 342px;
@@ -215,8 +241,8 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 0 25px;
   min-height: 63px;
+  padding: 0 25px;
 }
 .navbar__logo {
   display: flex;
@@ -316,13 +342,13 @@
 ** Cart Styles **
 ****************/
 .cart {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   right: 0;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  justify-content: space-between;
   max-width: 440px;
   width: 100%;
   height: 100vh;
@@ -421,8 +447,8 @@
   padding: 12px 24px;
 }
 .input.search input {
-  height: 100%;
   flex: 1 1 auto;
+  height: 100%;
   font-size: 1rem;
   font-weight: 400;
   line-height: 150%;
@@ -507,6 +533,7 @@ img {
   justify-content: unset;
   position: relative;
   max-height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -549,9 +576,14 @@ img {
 ** Home Page Styles **
 *********************/
 .home-page {
+  display: flex;
+  flex-direction: column;
   position: relative;
   flex: 1 1 auto;
+  max-height: 100vh;
+  height: 100%;
   padding: 33px 45px;
+  padding-top: 0;
 }
 @media only screen and (max-width: 630px) {
   .home-page {
@@ -560,10 +592,11 @@ img {
 }
 .home-page .fixed {
   position: sticky;
-  top: 33px;
-  z-index: 99;
-  background-color: #fff;
+  top: 0;
+  padding-top: 33px;
   padding-bottom: 20px;
+  background-color: #fff;
+  z-index: 99;
 }
 .home-page .input.search {
   width: 100%;
@@ -581,8 +614,8 @@ img {
   color: #353535;
 }
 .home-page__description {
-  font-weight: 600;
   font-size: 16px;
+  font-weight: 600;
   line-height: 24px;
   color: #A6A6A6;
 }
@@ -597,6 +630,8 @@ img {
   height: 50px;
   overflow: hidden;
   overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .home-page .categories::-webkit-scrollbar {
   display: none;
@@ -606,8 +641,8 @@ img {
   align-items: center;
   justify-content: unset;
   display: inline-flex;
-  position: relative;
   gap: 15px;
+  position: relative;
   height: 100%;
   cursor: pointer;
 }
@@ -654,18 +689,30 @@ img {
   position: absolute;
   left: 0;
   bottom: 0;
-  border: 1px solid #FF4E4E;
   width: 100%;
+  border: 1px solid #FF4E4E;
   border-radius: 5px;
 }
 .home-page .products {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: unset;
-  gap: 20px;
+  flex: 1 1 auto;
   flex-wrap: wrap;
+  gap: 20px;
   position: relative;
   margin-top: 35px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+@media only screen and (max-width: 1440px) {
+  .home-page .products {
+    padding-bottom: 80px;
+  }
+}
+.home-page .products::-webkit-scrollbar {
+  display: none;
 }
 @media only screen and (max-width: 630px) {
   .home-page .products {
@@ -675,6 +722,25 @@ img {
   .home-page .products .product-card {
     width: calc(50% - 10px);
   }
+}
+.home-page .cart-button__wrapper {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 50.52%);
+}
+@media only screen and (max-width: 1440px) {
+  .home-page .cart-button__wrapper {
+    display: flex;
+  }
+}
+.home-page .cart-button__wrapper .cart-button {
+  position: absolute;
+  top: 0;
+  right: 24px;
 }
 
 /*# sourceMappingURL=main.css.map */

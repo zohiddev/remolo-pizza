@@ -7,10 +7,10 @@
 ******************/
 .navbar {
     display: flex;
+    flex-shrink: 0;
     flex-direction: column;
     gap: 50px;
     position: sticky;
-    flex-shrink: 0;
     top: 0;
     left: 0;
     max-width: 342px;
@@ -29,8 +29,8 @@
     &__logo-row {
         @include mixins.flex(center, space-between);
         position: relative;
-        padding: 0 25px;
         min-height: 63px;
+        padding: 0 25px;
     }
 
     &__logo {
