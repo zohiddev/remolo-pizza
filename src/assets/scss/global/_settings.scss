@@ -50,6 +50,13 @@ img {
   max-height: 100vh;
   height: 100%;
   overflow: hidden;
+
+  #main-content__row {
+    @include mixins.flex(flex-start, unset);
+    position: relative;
+    flex: 1 1 auto;
+    height: 100%;
+  }
 }
 
 .container {

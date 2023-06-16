@@ -1,4 +1,4 @@
-export const pagesCategories = [
+export const pagesData = [
   {
     id: 1,
     icon: (
@@ -16,6 +16,7 @@ export const pagesCategories = [
       </svg>
     ),
     name: "Inicio",
+    url: "/",
   },
   {
     id: 2,
@@ -34,6 +35,7 @@ export const pagesCategories = [
       </svg>
     ),
     name: "Favoritos",
+    url: "/",
   },
   {
     id: 3,
@@ -52,6 +54,7 @@ export const pagesCategories = [
       </svg>
     ),
     name: "Preferencias",
+    url: "/",
   },
   {
     id: 4,
@@ -70,5 +73,6 @@ export const pagesCategories = [
       </svg>
     ),
     name: "Resportar",
+    url: "/",
   },
 ];

@@ -26,9 +26,3 @@
         font-size: 11px;
     }
 }
-
-@include mixins.media(480) {
-    :root {
-        font-size: 10px;
-    }
-}

@@ -1,0 +1,13 @@
+@use '../../../assets/scss/mixins/mixins';
+@use '../../../assets/scss/global/functions' as fn;
+@use '../../../assets/scss/global/variables' as var;
+
+/**********************
+** Pages List Styles **
+**********************/
+.pages__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+}

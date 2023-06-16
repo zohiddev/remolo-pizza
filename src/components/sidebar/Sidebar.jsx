@@ -4,15 +4,15 @@ import { Logo } from "../ui/Logo";
 import { PagesList } from "../lists/PagesList";
 import { pagesData } from "../../data/pages";
 
-export const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export const Sidebar = ({ isOpenState, setIsOpenState }) => {
+  const [isOpen, setIsOpen] = useState(isOpenState);
   const [activePage, setActivePage] = useState(1);
 
   return (
-    <div className={`navbar ${isOpen ? "open" : ""}`}>
-      <div className="navbar__logo-row">
-        <Logo additionalClasses={["navbar__logo"]} />
-        <BurgerIcon clickHandler={() => setIsOpen(!isOpen)} />
+    <div className={`sidebar ${isOpenState ? "open" : ""}`}>
+      <div className="sidebar__logo-row">
+        <Logo additionalClasses={["sidebar__logo"]} />
+        <BurgerIcon clickHandler={() => setIsOpenState(!isOpenState)} />
       </div>
       <PagesList pagesData={pagesData} activePage={activePage} />
     </div>

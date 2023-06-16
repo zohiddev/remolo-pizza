@@ -6,5 +6,6 @@ import { ProductCard } from "../components/card/ProductCard";
 import { ProductsList } from "../components/lists/ProductsList";
 import { CardButtonMobile } from "../components/card/CardButtonMobile";
 import { CategoriesList } from "../components/lists/CategoriesList";
+import { Header } from "../components/header";
 
-export { HomePage, Input, Icon, ProductCard, CartButton, ProductsList, CardButtonMobile, CategoriesList };
+export { HomePage, Input, Icon, ProductCard, CartButton, ProductsList, CardButtonMobile, CategoriesList, Header };

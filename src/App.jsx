@@ -7,8 +7,10 @@ function App() {
   return (
     <>
       <Layout />
-      <HomePage />
-      <Cart cartProductsData={cartProductsData} />
+      <div id="main-content__row">
+        <HomePage />
+        <Cart cartProductsData={cartProductsData} />
+      </div>
     </>
   );
 }

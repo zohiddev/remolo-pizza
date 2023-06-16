@@ -55,22 +55,6 @@
         color: var.$dark-grey--color;
     }
 
-    .cart-products__list {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        max-height: 55vh;
-        height: 100%;
-        position: relative;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
-
     &__checkout {
         display: flex;
         flex-direction: column;
