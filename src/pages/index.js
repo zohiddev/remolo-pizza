@@ -8,4 +8,14 @@ import { CardButtonMobile } from "../components/card/CardButtonMobile";
 import { CategoriesList } from "../components/lists/CategoriesList";
 import { Header } from "../components/header";
 
-export { HomePage, Input, Icon, ProductCard, CartButton, ProductsList, CardButtonMobile, CategoriesList, Header };
+export {
+    HomePage,
+    Input,
+    Icon,
+    ProductCard,
+    CartButton,
+    ProductsList,
+    CardButtonMobile,
+    CategoriesList,
+    Header
+};

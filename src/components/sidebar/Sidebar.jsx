@@ -5,7 +5,6 @@ import { PagesList } from "../lists/PagesList";
 import { pagesData } from "../../data/pages";
 
 export const Sidebar = ({ isOpenState, setIsOpenState }) => {
-  const [isOpen, setIsOpen] = useState(isOpenState);
   const [activePage, setActivePage] = useState(1);
 
   return (

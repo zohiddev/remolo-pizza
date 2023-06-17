@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Input } from "../form/Input";
 import { BurgerIcon } from "../ui/BurgerIcon";
 import { Icon } from "../ui/Icon";
+import { Sidebar } from "../sidebar/Sidebar";
 import searchIconSvg from "/src/assets/images/icons/search-icon.svg";
 import closeIconSvg from "/src/assets/images/icons/close-icon.svg";
-import { Sidebar } from "../sidebar/Sidebar";
 
 const SearchIcon = ({ clickHandler }) => {
   return (
