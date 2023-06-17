@@ -2,6 +2,7 @@ import React from 'react'
 import search from "../../assets/images/icons/search.svg"
 import Products from './Products';
 import Main_category from './Main-category';
+import burger__menu from "../../assets/images/icons/burger_menu.svg"
 
 function Main() {
   return (
@@ -11,6 +12,10 @@ function Main() {
               <img src={search} alt="search__img" />
               <input type="text" placeholder="Busca algo de nuestro menu..." />
           </div>
+            <div className="main__search-mobile">
+              <img src={burger__menu} alt="" />
+              <img src={search} alt="search__img" />
+            </div>
           <div className="main__title">
               <span className="main__title-text1">Categorias</span>
               <span className="main__title-text2">Elige nuestras deliciosas pizzas </span>

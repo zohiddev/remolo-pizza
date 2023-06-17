@@ -15,12 +15,31 @@
             width: 115px;
             height: 100vh;
             background-color: $sidebar-bg;
+            @media screen and (min-width: 767px) and (max-width: 1440px) {
+                width: 8%;
+            }
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
             &__col {
                 @include flex(center, space-between, column);
                 width: 100%;
                 height: auto;
                 padding-top: 50px;
+                .sidebar__col-burger {
+                    border: none;
+                    cursor: pointer;
+                    margin-bottom: 50px;
+                    background-color: transparent;
+                    img  {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
                 .sidebar__icons {
+                    @media screen and (max-width: 767px) {
+                        display: none;
+                    }
                     &:not(:last-child) {
                         margin-bottom: 60px;
                     &:nth-child(2) {
@@ -39,6 +58,13 @@
             width: 1200px;
             height: 100vh;
             padding: 33px 45px 0;
+            @media screen and (min-width: 767px) and (max-width: 1440px) {
+                width: 92%;
+            }
+            @media screen and (max-width: 767px) {
+                width: 100%;
+                padding: 33px 24px;
+            }
             &-row {
                 width: 100%;
                 @include flex(flex-start, center, column);
@@ -51,6 +77,9 @@
                     background-color: $sidebar-bg;
                     padding: 13px 24px;
                     margin-bottom: 40px;
+                    @media screen and (max-width: 767px) {
+                        display: none;
+                    }
                     img {
                         width: 23px;
                         height: 23px;
@@ -70,6 +99,18 @@
                         &:focus {
                             outline: none
                         }
+                    }
+                }
+                .main__search-mobile {
+                    display: none;
+                    @media screen and (max-width: 767px) {
+                        width: 100%;
+                        @include flex(center, space-between, unset);
+                        margin-bottom: 40px;
+                    }
+                    img {
+                        width: 29px;
+                        height: 29px
                     }
                 }
                 .main__title {
@@ -97,15 +138,32 @@
                         position: absolute;
                         bottom: 0;
                         background-color: $sidebar-bg;
+                        @media screen and (max-width: 767px) {
+                            display: none;
+                        }
                     }
                     &-item {
                         @include flex(center, center, row);
                         margin-bottom: 15px;
                         cursor: pointer;
+                        @media screen and (max-width: 630px) {
+                            background-color: $gray-bg-color;
+                            border-radius: 16px;
+                        }
                         img {
                             width: 24px;
                             height: 24px;
-                            margin-right: 15px
+                            margin-right: 15px;
+                            @media screen and (max-width: 630px) {
+                                width: 60px;
+                                height: 60px;
+                                padding: 15px;
+                                margin-right: 0;
+                            }
+                            &.active {
+                                background-color: $red-color;
+                                color: $white-color;
+                            }
                         }
                         .main__category-text {
                             @include font(20, 20, 600, 27px);
@@ -113,27 +171,37 @@
                             //     color: $red-color;
                             // }
                             color: $black-color;
+                            @media screen and (max-width: 630px) {
+                                display: none;
+                            }
                         }
                     }
                 }
                 .main__products {
                     width: 100%;
-                    @include flex(space-between, space-between, row);
+                    @include flex(center, space-between, row);
                     flex-wrap: wrap;
                     margin-top: 35px;
                     border-radius: 16px;
+                    gap: 20px 20px;
                     .main__product {
                         width: 260px;
                         @include flex(flex-start, center, column);
                         border-radius: 16px;
                         background-color: $white-color;
                         box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
-                        &:not(:last-child) {
-                            margin-bottom: 20px;
+                        @media screen and (max-width: 630px) {
+                            width: 156px;
                         }
                         img {
                             border-radius: 16px 16px 0px 0px;
+                            @media screen and (max-width: 630px) {
+                                width: 156px;
+                                height: 157px;
+                                object-fit: cover;
+                            }
                         }
+                        
                         &-detail {
                             width: 100%;
                             @include flex(flex-end, center, column);
@@ -143,11 +211,11 @@
                                 padding-top: 15px;
                                 padding-left: 15px;
                                 .main__product-name {
-                                    @include font(16, 16, 500, 24px);
+                                    @include font(16, 13, 500, 24px);
                                     color: $gray-color;
-                                }
+                                }   
                                 .main__product-price {
-                                    @include font(16, 16, 600, 24px);
+                                    @include font(16, 14, 600, 24px);
                                     color: $red-color;
                                 }
                             }
