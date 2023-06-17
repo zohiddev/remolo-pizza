@@ -1,9 +1,21 @@
-import { HomePage } from "./home/index";
-import { Somsa } from "./Somsa/Somsa";
-import { Napitka } from "./Napitka/Napitka";
-import { Disert } from "./Disert/Disert";
+import { HomePage } from "./home";
+import { Input } from '../components/form/Input';
+import { Icon } from '../components/ui/Icon';
+import { CartButton } from '../components/ui/CartButton';
+import { ProductCard } from "../components/card/ProductCard";
+import { ProductsList } from "../components/lists/ProductsList";
+import { CardButtonMobile } from "../components/card/CardButtonMobile";
+import { CategoriesList } from "../components/lists/CategoriesList";
+import { Header } from "../components/header";
 
-export { HomePage };
-export { Somsa };
-export { Napitka };
-export { Disert };
+export {
+    HomePage,
+    Input,
+    Icon,
+    ProductCard,
+    CartButton,
+    ProductsList,
+    CardButtonMobile,
+    CategoriesList,
+    Header
+};

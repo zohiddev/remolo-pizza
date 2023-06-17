@@ -1,0 +1,24 @@
+@use '../../../assets/scss/mixins/mixins';
+@use '../../../assets/scss/global/variables' as var;
+@use '../../../assets/scss/global/functions' as fn;
+
+/****************
+** Icon Styles **
+****************/
+.icon.burger-menu {
+    @include mixins.flex(flex-end, space-between);
+    flex-direction: column;
+    position: relative;
+    width: 30px;
+    height: 25px;
+
+    .line {
+        width: 100%;
+        border: 2px solid var.$icon--color;
+        border-radius: 5px;
+
+        &:last-child {
+            width: 50%;
+        }
+    }
+}

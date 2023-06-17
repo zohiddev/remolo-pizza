@@ -1,0 +1,21 @@
+@use './variables' as var;
+@use 'sass:math';
+
+//*********************//
+//* Format from pixel *//
+//*********************//
+@function px-to-rem($pixels, $font-size: var.$font-size--default) {
+  @return (math.div($pixels, $font-size) * 1rem);
+}
+
+@function px-to-em($pixels, $font-size: var.$font-size--default) {
+  @return (math.div($pixels, $font-size) * 1em);
+}
+
+@function px-to-unitless($pixels, $font-size: var.$font-size--default) {
+  @return math.div($pixels, $font-size);
+}
+
+@function px-to-percent($pixels, $font-size: var.$font-size--default) {
+  @return (math.div($pixels, $font-size) * 100%);
+}
