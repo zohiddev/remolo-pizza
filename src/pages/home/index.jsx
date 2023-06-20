@@ -3,8 +3,8 @@ import { ProductsList, CardButtonMobile, CategoriesList, Header } from "..";
 import { categoriesData } from "../../data/categories";
 import productsData from "../../data/products.json";
 
-export const HomePage = () => {
-  const [activeCategory, setActiveCategory] = useState(1);
+export const HomePage = ({ store }) => {
+  const { categories, products } = store.getState();
 
   return (
     <main className="main home-page">
@@ -15,11 +15,15 @@ export const HomePage = () => {
           Elige nuestras deliciosas pizzas
         </p>
         <CategoriesList
-          categoriesData={categoriesData}
-          activeCategory={activeCategory}
+          categoriesData={categories.items}
+          activeCategory={categories.activeCategory}
+          store={store}
         />
       </div>
-      <ProductsList productsData={productsData} />
+      <ProductsList productsData={products.items.filter(
+        (item) => item.category === categories.activeCategory
+      )}
+        store={store} />
       <CardButtonMobile />
     </main>
   );

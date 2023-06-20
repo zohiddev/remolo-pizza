@@ -1,7 +1,12 @@
 import { formatCurrency, getAbsolutePrice } from "..";
 import { Icon } from "../ui/Icon";
 
-export const ProductCard = ({ id, image, name, price, discount }) => {
+export const ProductCard = ({ product, store }) => {
+  const { image, name, price, discount} = product;
+
+  const handleCardButton = () => {
+    store.setCart(product)
+  }
   return (
     <div className="product-card">
       <div className="product-card__img img">
@@ -12,7 +17,7 @@ export const ProductCard = ({ id, image, name, price, discount }) => {
         <p className="product-card__price">
           {formatCurrency(discount ? getAbsolutePrice(price, discount) : price)}
         </p>
-        <Icon additionalClasses={["product-card__icon add-to-cart"]}>
+        <Icon clickHandler={handleCardButton} additionalClasses={["product-card__icon add-to-cart"]}>
           <svg
             width="13"
             height="13"

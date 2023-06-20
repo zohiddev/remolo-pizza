@@ -2,13 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
-import "./styles/css/main.css";
+import "./styles/main.scss";
 import "swiper/css";
+import { store } from "./redux/store.js"
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+const reRender = () => {
+  ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
-      <App />
+      <App store={store} />
     </BrowserRouter>
-  </React.StrictMode>
-);
+  );
+};
+reRender()
+store.subscribe(reRender)
+  

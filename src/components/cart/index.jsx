@@ -3,7 +3,7 @@ import { CartProductsList } from "../lists/CartProductsList";
 import { CartCheckout } from "../actions/CartCheckout";
 import deleteIconSvg from "/src/assets/images/icons/delete-icon.svg";
 
-export const Cart = ({ cartProductsData }) => {
+export const Cart = ({ cartProductsData, store }) => {
   const delivery = 100;
   const total = 1650;
 
@@ -19,7 +19,7 @@ export const Cart = ({ cartProductsData }) => {
           <img src={deleteIconSvg} alt="delete icon" />
         </Icon>
       </div>
-      <CartProductsList cartProductsData={cartProductsData} />
+      <CartProductsList cartProductsData={cartProductsData} store={store}/>
       <CartCheckout delivery={delivery} total={total} />
     </div>
   );

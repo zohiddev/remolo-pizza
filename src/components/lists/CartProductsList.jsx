@@ -1,18 +1,10 @@
 import { ProductCardMini } from "../card/ProductCardMini";
 
-export const CartProductsList = ({ cartProductsData }) => {
+export const CartProductsList = ({ cartProductsData, store }) => {
   return (
     <div className="cart-products__list">
-      {cartProductsData.map((product) => (
-        <ProductCardMini
-          key={product.id}
-          id={product.id}
-          image={product.image}
-          name={product.name}
-          price={product.price}
-          discount={product.discount}
-          quantity={product.quantity}
-        />
+      {cartProductsData.map((product, i) => (
+        <ProductCardMini key={i} product={product} store={store}/>
       ))}
     </div>
   );

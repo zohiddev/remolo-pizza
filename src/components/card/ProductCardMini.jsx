@@ -2,14 +2,13 @@ import { formatCurrency, getAbsolutePrice } from "..";
 import { QuantitySelect } from "../selects/QuantitySelect";
 import { Icon } from "../ui/Icon";
 
-export const ProductCardMini = ({
-  id,
-  image,
-  name,
-  price,
-  discount,
-  quantity,
-}) => {
+export const ProductCardMini = ({ product, store }) => {
+  const { image, name, price, discount, quantity, id } = product;
+
+  const handleCartItemDelete = (id) => {
+    store.deleteCart(id)
+  }
+
   return (
     <div className="product-card--mini">
       <div className="product-card--mini__img img">
@@ -25,7 +24,7 @@ export const ProductCardMini = ({
           </p>
         </div>
         <QuantitySelect quantity={quantity} />
-        <Icon additionalClasses={["product-card--mini__icon close-icon"]}>
+        <Icon clickHandler={() => handleCartItemDelete(id)} additionalClasses={["product-card--mini__icon close-icon"]}>
           <svg
             width="12"
             height="12"
