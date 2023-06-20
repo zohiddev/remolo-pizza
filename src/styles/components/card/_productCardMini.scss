@@ -19,15 +19,30 @@
 
     &__img {
         position: relative;
-        @include mixins.adaptive-value('width', 110, 65);
+        width: 110px;
+        height: 75px;
         border-radius: 16px;
         overflow: hidden;
+
+        img {
+            object-fit: cover;
+        }
+
+        @include mixins.media(1440) {
+            max-width: 70px;
+        }
     }
 
     &__content {
         @include mixins.flex(unset, space-between);
         flex-direction: column;
         flex: 1 1 auto;
+
+        @include mixins.media(1440) {
+            flex-direction: row;
+            align-items: center;
+            padding-right: 10px;
+        }
     }
 
     &__name {
@@ -77,6 +92,10 @@
             svg path {
                 fill: var.$main--color;
             }
+        }
+
+        @include mixins.media(1440) {
+            display: none;
         }
     }
 }

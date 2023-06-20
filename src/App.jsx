@@ -1,7 +1,6 @@
 import { Layout } from "./components";
 import { Cart } from "./components/cart";
 import { HomePage } from "./pages/home";
-import cartProductsData from "./data/productsCart.json";
 
 function App() {
   return (
@@ -9,7 +8,7 @@ function App() {
       <Layout />
       <div id="main-content__row">
         <HomePage />
-        <Cart cartProductsData={cartProductsData} />
+        <Cart />
       </div>
     </>
   );

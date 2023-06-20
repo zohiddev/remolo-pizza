@@ -7,6 +7,8 @@ import { ProductsList } from "../components/lists/ProductsList";
 import { CardButtonMobile } from "../components/card/CardButtonMobile";
 import { CategoriesList } from "../components/lists/CategoriesList";
 import { Header } from "../components/header";
+import { getApiUrl } from '../helpers/getApiUrl';
+import { categoryAdded } from "../redux/actions/categoryActions";
 
 export {
     HomePage,
@@ -17,5 +19,7 @@ export {
     ProductsList,
     CardButtonMobile,
     CategoriesList,
-    Header
+    Header,
+    getApiUrl,
+    categoryAdded
 };

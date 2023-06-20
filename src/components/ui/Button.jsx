@@ -1,6 +1,9 @@
-export const Button = ({ text, icon, additionalClasses = [] }) => {
+export const Button = ({ text, icon, additionalClasses = [], onClick }) => {
   return (
-    <button className={`button ${additionalClasses.map((cls) => cls)}`}>
+    <button
+      onClick={onClick}
+      className={`button ${additionalClasses.map((cls) => cls)}`}
+    >
       {text}
       {icon && icon}
     </button>

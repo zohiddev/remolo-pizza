@@ -1,8 +1,8 @@
-export const Icon = ({ children, additionalClasses = [], clickHandler }) => {
+export const Icon = ({ children, additionalClasses = [], onClick }) => {
   return (
     <span
       className={`icon ${additionalClasses.map((cls) => cls)}`}
-      onClick={clickHandler}
+      onClick={onClick}
     >
       {children}
     </span>

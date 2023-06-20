@@ -21,10 +21,6 @@
     transition: all .1s ease;
     overflow: hidden;
 
-    @include mixins.media(920) {
-        display: none;
-    }
-
     &__logo-row {
         @include mixins.flex(center, space-between);
         position: relative;

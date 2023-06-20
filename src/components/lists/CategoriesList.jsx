@@ -6,9 +6,7 @@ export const CategoriesList = ({ categoriesData, activeCategory }) => {
       {categoriesData.map((category) => (
         <CategoryCard
           key={category.id}
-          id={category.id}
-          icon={category.icon}
-          name={category.name}
+          category={category}
           activeCategory={activeCategory}
         />
       ))}

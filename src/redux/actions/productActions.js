@@ -1,14 +1,10 @@
-import * as actions from './actionTypes';
+import * as actions from '../actionTypes';
 
-export const productAdded = (id, img, name, price, discount) => {
+export const productAdded = (product) => {
     return {
         type: actions.PRODUCT_ADDED,
         payload: {
-            id,
-            img,
-            name,
-            price,
-            discount
+            ...product
         }
     }
 }
