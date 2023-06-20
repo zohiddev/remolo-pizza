@@ -6,18 +6,22 @@ import help from "../assets/images/icons/question_mark.svg"
 export const sidebar__imgs = [
     {
         id: 1,
-        image: home
+        image: home,
+        text: "Inicio"
     },
     {
         id: 2,
-        image: heart
+        image: heart,
+        text: "Favoritos"
     },
     {
         id: 3,
-        image: settings
+        image: settings,
+        text: "Preferencias"
     },
     {
         id: 4,
-        image: help
+        image: help,
+        text: "Resportar"
     },
 ]

@@ -1,6 +1,6 @@
-import product1 from "../assets/images/icons/product1.png"
-import product2 from "../assets/images/icons/product2.png"
-import product3 from "../assets/images/icons/product3.png"
+import product1 from "../assets/images/imgs/product1.png"
+import product2 from "../assets/images/imgs/product2.png"
+import product3 from "../assets/images/imgs/product3.png"
 export let basket_products = [
     {
         id: 1,

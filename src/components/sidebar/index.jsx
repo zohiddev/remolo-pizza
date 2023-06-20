@@ -1,23 +1,30 @@
-import React from "react";
-import { sidebar__imgs } from "../../helpers/images";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import burger__menu from "../../assets/images/icons/burger_menu.svg"
+import burger__menu2 from "../../assets/images/icons/burger_menu2.svg"
+import sidebar_logo_icon from "../../assets/images/icons/sidebar__logo-icon.svg"
+import sidebar_logo_text from "../../assets/images/icons/sidebar__logo-text.svg"
+import SidebarItem from "./SidebarItem";
 const Sidebar = () => {
+  const [active, setActive] = useState(1)
+  const handleActive = () => {
+    setActive(!active)
+  }
   return (
-  <div className="sidebar">
+  <div className={`sidebar ${active ? "active" : ""}`}>
     <div className="sidebar__col">
-      <button className="sidebar__col-burger">
-        <img src={burger__menu} alt="" />
+      <button className="sidebar__col-burger" onClick={handleActive}>
+        <img src={burger__menu} alt="burger__menu" />
         </button>
-      {
-        sidebar__imgs.map(el => {
-          return (
-            <Link to="/" className="sidebar__icons" key={el.id}>
-              <img src={el.image} alt="icons"/>
-            </Link>
-          )
-        })
-      }
+        <div className="sidebar__col-logo-mobile">
+          <div className="sidebar__col-logo-imgs">
+            <img src={sidebar_logo_icon} alt="sidebar__logo" />
+            <img src={sidebar_logo_text} alt="sidebar__logo" />
+          </div>
+          <button className="sidebar__col-burger-mobile">
+            <img src={burger__menu2} alt="burger__menu" onClick={handleActive} />
+          </button>
+        </div>
+        <SidebarItem/>
     </div>
   </div>
   )

@@ -1,7 +1,7 @@
-import product1 from "../assets/images/icons/product1.jpeg"
-import product2 from "../assets/images/icons/product2.jpeg"
-import product3 from "../assets/images/icons/product3.jpeg"
-import product4 from "../assets/images/icons/product4.jpeg"
+import product1 from "../assets/images/imgs/product1.jpeg"
+import product2 from "../assets/images/imgs/product2.jpeg"
+import product3 from "../assets/images/imgs/product3.jpeg"
+import product4 from "../assets/images/imgs/product4.jpeg"
 
 export let products = [
     {
