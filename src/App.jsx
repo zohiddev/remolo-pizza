@@ -1,7 +1,7 @@
 import { Layout } from "./components";
 import "./assets/scss/main.scss"
-function App() {
-  return <Layout />;
+function App({store}) {
+  return <Layout store={store}/>;
 }
 
 export default App;

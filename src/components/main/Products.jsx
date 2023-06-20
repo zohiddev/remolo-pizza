@@ -1,11 +1,10 @@
 import React from 'react'
-import { products } from '../../helpers/products';
 
-function Products() {
+function Products({product}) {
   return (
     <div className="main__products">
         {
-            products.map(item => {
+            product.map(item => {
                 return (
                     <div className="main__product" key={item.id}>
                         <img src={item.img} alt="product__img" />

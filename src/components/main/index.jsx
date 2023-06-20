@@ -4,7 +4,9 @@ import Products from './Products';
 import Main_category from './Main-category';
 import burger__menu from "../../assets/images/icons/burger_menu.svg"
 
-function Main() {
+function Main({store}) {
+  const { categories, product } = store.getState()
+  console.log(product.items.filter((item) => item.category === categories.activeCategory))
   return (
     <div className="main">
       <div className="main-row">
@@ -20,8 +22,10 @@ function Main() {
               <span className="main__title-text1">Categorias</span>
               <span className="main__title-text2">Elige nuestras deliciosas pizzas </span>
           </div>
-          <Main_category/>
-        <Products/>
+          <Main_category 
+          store={store}
+          activeCategory={categories.activeCategory}/>
+        <Products product={product.items.filter((item) => item.category === categories.activeCategory)}/>
       </div>
     </div>
   )

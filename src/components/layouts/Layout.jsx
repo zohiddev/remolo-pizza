@@ -1,13 +1,13 @@
 import Basket from "../basket";
 import Main from "../main";
-import Navbar from "../sidebar/index";
+import Sidebar from "../sidebar/index";
 
-export const Layout = () => {
+export const Layout = ({store}) => {
   return (
     <div className="wrapper">
       <div className="main-layout__row">
-        <Navbar/>
-        <Main/>
+        <Sidebar/>
+        <Main store={store}/>
         <Basket/>
       </div>
     </div>
