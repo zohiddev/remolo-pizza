@@ -8,10 +8,12 @@ function SidebarItem() {
       {
         sidebar__imgs.map(el => {
           return (
-            <Link to="/" className="sidebar__icons" key={el.id}>
-              <img src={el.image} className="sidebar__icons-img active" alt="icons"/>
+            <div className="sidebar__icons-item active" key={el.id}>
+              <Link to="/" className="sidebar__icons">
+              {el.image}
               <span className="sidebar__icons-text">{el.text}</span>
             </Link>
+            </div>
           )
         })
       }

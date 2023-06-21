@@ -1,27 +1,27 @@
-import home from "../assets/images/icons/home.svg"
-import heart from "../assets/images/icons/heart.svg"
-import settings from "../assets/images/icons/settings.svg"
-import help from "../assets/images/icons/question_mark.svg"
+import HomeIcon from "../assets/images/icons/HomeIcon"
+import SettingsIcon from "../assets/images/icons/Settings"
+import HeartIcon from "../assets/images/icons/Heart"
+import HelpIcon from "../assets/images/icons/Help"
 
 export const sidebar__imgs = [
     {
         id: 1,
-        image: home,
+        image: HomeIcon(),
         text: "Inicio"
     },
     {
         id: 2,
-        image: heart,
+        image: HeartIcon(),
         text: "Favoritos"
     },
     {
         id: 3,
-        image: settings,
+        image: SettingsIcon(),
         text: "Preferencias"
     },
     {
         id: 4,
-        image: help,
+        image: HelpIcon(),
         text: "Resportar"
     },
 ]

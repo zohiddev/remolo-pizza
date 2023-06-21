@@ -1,7 +1,7 @@
 import React from 'react'
 import search from "../../assets/images/icons/search.svg"
 import Products from './Products';
-import Main_category from './Main-category';
+import MainCategory from './MainCategory';
 import burger__menu from "../../assets/images/icons/burger_menu.svg"
 
 function Main({store}) {
@@ -22,7 +22,7 @@ function Main({store}) {
               <span className="main__title-text1">Categorias</span>
               <span className="main__title-text2">Elige nuestras deliciosas pizzas </span>
           </div>
-          <Main_category 
+          <MainCategory 
           store={store}
           activeCategory={categories.activeCategory}/>
         <Products product={product.items.filter((item) => item.category === categories.activeCategory)}/>
