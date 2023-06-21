@@ -7,27 +7,34 @@ import {
   Header,
   getApiUrl,
   categoryAdded,
+  Loading,
+  ProductsSkeletonList,
 } from "..";
 import axios from "axios";
 
 export const HomePage = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
+  const [loadingProducts, setLoadingProducts] = useState(false);
+  const [loadingCategories, setLoadingCategories] = useState(false);
   const activeCategory = useSelector((state) => state.layout.activeCategory);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
+    setLoadingCategories(true);
     axios
       .get(getApiUrl("category/all/"))
       .then((response) => {
         setCategories(response.data);
         response.data.forEach((category) => dispatch(categoryAdded(category)));
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => setLoadingCategories(false));
   }, []);
 
   useEffect(() => {
+    setLoadingProducts(true);
     axios
       .get(getApiUrl("product/all/"))
       .then((response) => {
@@ -35,7 +42,8 @@ export const HomePage = () => {
           response.data.filter((product) => product.category === activeCategory)
         );
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => setLoadingProducts(false));
   }, [activeCategory]);
 
   return (
@@ -46,12 +54,20 @@ export const HomePage = () => {
         <p className="home-page__description">
           Elige nuestras deliciosas pizzas
         </p>
-        <CategoriesList
-          categoriesData={categories}
-          activeCategory={activeCategory}
-        />
+        {loadingCategories ? (
+          <Loading />
+        ) : (
+          <CategoriesList
+            categories={categories}
+            activeCategory={activeCategory}
+          />
+        )}
       </div>
-      <ProductsList productsData={products} />
+      {loadingProducts ? (
+        <ProductsSkeletonList count={Math.ceil(Math.random() * 10)} />
+      ) : (
+        <ProductsList products={products} />
+      )}
       <CardButtonMobile />
     </main>
   );

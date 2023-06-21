@@ -1,0 +1,40 @@
+@use '../../mixins/mixins';
+@use '../../global/functions' as fn;
+@use '../../global/variables' as var;
+
+/*************************
+** Products List Styles **
+*************************/
+.products__list {
+    @include mixins.flex(flex-start, unset);
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    margin-top: 35px;
+    padding: 0 45px;
+    padding-bottom: 24px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+    @include mixins.media(1440) {
+        padding-bottom: 80px;
+    }
+
+    @include mixins.media(630) {
+        gap: 10px;
+        justify-content: space-between;
+        padding-left: 24p;
+        padding-right: 24px;
+        margin-top: 24px;
+
+        .product-card {
+            width: calc(50% - 10px);
+        }
+    }
+}

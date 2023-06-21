@@ -8,32 +8,33 @@ export const layoutReducerState = {
 }
 
 export const layoutReducer = (state = layoutReducerState, action) => {
-  switch (action.type) {
-    case actions.NAVBAR_TOGGLED:
-        return {
-            ...state,
-            isNavbarOpen: !state.isNavbarOpen
-        }
+    const {type, payload} = action;
+    switch (type) {
+        case actions.NAVBAR_TOGGLED:
+            return {
+                ...state,
+                isNavbarOpen: !state.isNavbarOpen
+            }
 
-    case actions.CART_TOGGLED:
-        return {
-            ...state,
-            isCartOpen: !state.isCartOpen
-        }
+        case actions.CART_TOGGLED:
+            return {
+                ...state,
+                isCartOpen: !state.isCartOpen
+            }
 
-    case actions.SET_ACTIVE_CATEGORY:
-        return {
-            ...state,
-            activeCategory: action.payload.id
-        }
+        case actions.SET_ACTIVE_CATEGORY:
+            return {
+                ...state,
+                activeCategory: payload.id
+            }
 
-    case actions.SET_ACTIVE_PAGE:
-        return {
-            ...state,
-            activePage: action.payload.name
-        }
+        case actions.SET_ACTIVE_PAGE:
+            return {
+                ...state,
+                activePage: payload.name
+            }
 
-    default:
-        return state
-  }
+        default:
+            return state
+    }
 }

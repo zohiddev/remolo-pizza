@@ -6,9 +6,11 @@ import { ProductCard } from "../components/card/ProductCard";
 import { ProductsList } from "../components/lists/ProductsList";
 import { CardButtonMobile } from "../components/card/CardButtonMobile";
 import { CategoriesList } from "../components/lists/CategoriesList";
-import { Header } from "../components/header";
+import { Header } from "../layouts/header/Header";
 import { getApiUrl } from '../helpers/getApiUrl';
 import { categoryAdded } from "../redux/actions/categoryActions";
+import { Loading } from '../components/loading/Loading';
+import { ProductsSkeletonList } from "../components/lists/ProductsSkeletonList";
 
 export {
     HomePage,
@@ -21,5 +23,7 @@ export {
     CategoriesList,
     Header,
     getApiUrl,
-    categoryAdded
+    categoryAdded,
+    Loading,
+    ProductsSkeletonList
 };

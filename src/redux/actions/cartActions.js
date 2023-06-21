@@ -18,3 +18,27 @@ export const cartRemove = (id) => {
         }
     }
 }
+
+export const increaseCart = (id) => {
+    return {
+        type: actions.INCREASE_CART,
+        payload: {
+            id
+        }
+    }
+}
+
+export const decreaseCart = (id) => {
+    return {
+        type: actions.DECREASE_CART,
+        payload: {
+            id
+        }
+    }
+}
+
+export const clearCart = () => {
+    return {
+        type: actions.CLEAR_CART
+    }
+}

@@ -1,4 +1,10 @@
-import { formatCurrency, getAbsolutePrice, cartRemove } from "..";
+import {
+  formatCurrency,
+  getAbsolutePrice,
+  cartRemove,
+  increaseCart,
+  decreaseCart,
+} from "..";
 import { useDispatch } from "react-redux";
 import { Icon } from "../ui/Icon";
 import { Quantity } from "../ui/Quantity";
@@ -35,14 +41,18 @@ export const ProductCardMini = ({ product }) => {
           <h3 className="product-card--mini__name">{name}</h3>
           <p className="product-card--mini__price">
             {formatCurrency(
-              discount ? getAbsolutePrice(price, discount) : price
+              (discount ? getAbsolutePrice(price, discount) : price) * quantity
             )}
           </p>
         </div>
         <Quantity
           quantity={quantity}
-          increase={() => console.log("hallo")}
-          decrease={() => console.log("hallo")}
+          increase={() => dispatch(increaseCart(id))}
+          decrease={() =>
+            quantity !== 1
+              ? dispatch(decreaseCart(id))
+              : dispatch(cartRemove(id))
+          }
         />
         <Icon
           onClick={() => dispatch(cartRemove(id))}

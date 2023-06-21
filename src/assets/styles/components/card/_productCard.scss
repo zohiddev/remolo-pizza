@@ -1,0 +1,69 @@
+@use '../../mixins/mixins';
+@use '../../global/functions' as fn;
+@use '../../global/variables' as var;
+
+/************************
+** Product Card Styles **
+************************/
+.product-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @include mixins.adaptive-value('width', 260, 156);
+    background: #fff;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+
+    &__img {
+        position: relative;
+        width: 100%;
+        height: 150px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        position: relative;
+        padding: 13px;
+        padding-bottom: 38px;
+    }
+
+    &__icon {
+        @include mixins.flex-center();
+        position: absolute;
+        right: fn.px-to-rem(10px);
+        bottom: fn.px-to-rem(10px);
+        width: 40px;
+        height: 40px;
+        border: 1px solid var.$grey--color;
+        border-radius: 13px;
+
+        &.active {
+            border: none;
+            background-color: var.$black--color;
+        }
+    }
+
+    &__name,
+    &__price {
+        @include mixins.font(16, 13, 500, fn.px-to-percent(24px));
+    }
+
+    &__name {
+        color: var.$text--color;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__price {
+        font-weight: 600;
+        color: var.$main--color;
+    }
+}

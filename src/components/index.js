@@ -1,14 +1,11 @@
-import { Layout } from "./layouts/Layout";
+import { getApiUrl } from '../helpers/getApiUrl';
 import { formatCurrency } from '../helpers/formatCurrency';
 import { getAbsolutePrice } from '../helpers/getAbsolutePrice';
-import { navbarToggled } from "../redux/actions/layoutActions";
-import { setActiveCategory } from "../redux/actions/layoutActions";
-import { setActivePage } from "../redux/actions/layoutActions";
-import { cartAdd } from '../redux/actions/cartActions';
-import { cartRemove } from "../redux/actions/cartActions";
-import { getApiUrl } from '../helpers/getApiUrl';
+import { navbarToggled, setActiveCategory, setActivePage } from "../redux/actions/layoutActions";
+import { cartAdd, cartRemove, increaseCart, decreaseCart, clearCart } from '../redux/actions/cartActions';
 
-export { Layout,
+export {
+    getApiUrl,
     formatCurrency,
     getAbsolutePrice,
     navbarToggled,
@@ -16,5 +13,7 @@ export { Layout,
     setActivePage,
     cartAdd,
     cartRemove,
-    getApiUrl
+    increaseCart,
+    decreaseCart,
+    clearCart
 };

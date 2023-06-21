@@ -1,9 +1,9 @@
 import { CategoryCard } from "../card/CategoryCard";
 
-export const CategoriesList = ({ categoriesData, activeCategory }) => {
+export const CategoriesList = ({ categories, activeCategory }) => {
   return (
     <div className="categories__list">
-      {categoriesData.map((category) => (
+      {categories.map((category) => (
         <CategoryCard
           key={category.id}
           category={category}
