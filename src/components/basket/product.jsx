@@ -1,11 +1,17 @@
 import React from 'react'
 import { basket_products } from '../../helpers/basket_products';
 import remove from "../../assets/images/icons/remove.svg"
-function Product() {
+import { store } from '../../redux/store';
+import { delCartAc } from '../../redux/actions/cartAction';
+function Product({products}) {
+    // const {id, name, price, image, quantity } = product
+    // const handleCartItemDel = (id) => {
+    //     store.dispatch(delCartAc({id}))
+    // }
   return (
     <div className="basket__products-items">
         {
-            basket_products.map(item => {
+            products.map(item => {
                 return (
                     <div className="basket__products-item" key={item.id}>
                         <img src={item.img} className="basket__products-item-img" alt="basket__product" />

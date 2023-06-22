@@ -1,17 +1,15 @@
 import React from 'react'
 
-function MainCategory({store, activeCategory}) {
-  const {categories} = store.getState();
-  const handleCategoryChange = () => {
-    store.setActiveCategory(categories.name);
-    console.log(categories);
+function MainCategory({categoriesData, store, activeCategory}) {
+  const handleCategoryChange = (name) => {
+    store.setActiveCategory(name);
   }
   return (
     <div className="main__category">
       {
-        categories.items.map(item => {
+        categoriesData.map(item => {
           return (
-            <button onClick={(handleCategoryChange)} className="main__category-item active" key={item.id}>
+            <button onClick={() => handleCategoryChange(item.name)} className={`main__category-item ${item.name === activeCategory ? " active" : ""}`} key={item.id}>
               {item.icon}
               <span className="main__category-text">{item.name}</span>
             </button>

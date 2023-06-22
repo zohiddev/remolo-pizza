@@ -2,7 +2,7 @@ import React from 'react'
 import del_img from "../../assets/images/icons/delete.svg"
 import Product from './Product';
 
-function Basket() {
+function Basket({store, cartProducts}) {
   return (
     <div className="basket">
         <div className="basket__row">
@@ -21,7 +21,7 @@ function Basket() {
                     </div>
                         <img src={del_img} className="basket__products-desc-img" alt="delete__img" />
                 </div>
-                <Product/>
+                <Product store={store} products={cartProducts}/>
             </div>
             <div className="basket__order">
                 <div className="basket__order-price">

@@ -6,7 +6,6 @@ import burger__menu from "../../assets/images/icons/burger_menu.svg"
 
 function Main({store}) {
   const { categories, product } = store.getState()
-  console.log(product.items.filter((item) => item.category === categories.activeCategory))
   return (
     <div className="main">
       <div className="main-row">
@@ -24,8 +23,9 @@ function Main({store}) {
           </div>
           <MainCategory 
           store={store}
+          categoriesData={categories.items}
           activeCategory={categories.activeCategory}/>
-        <Products product={product.items.filter((item) => item.category === categories.activeCategory)}/>
+        <Products product={product.items.filter((item) => item.category === categories.activeCategory)} store={store}/>
       </div>
     </div>
   )

@@ -9,14 +9,14 @@ export let products = [
         name: "Pizza muzzarella",
         price: 1200,
         img: product1,
-        category: "Pizza"
+        category: "Pizzas"
     },
     {
         id: 2,
         name: "Pizza pepperoni",
         price: 1100,
         img: product2,
-        category: "Pizza"
+        category: "Pizzas"
     },
     {
         id: 3,

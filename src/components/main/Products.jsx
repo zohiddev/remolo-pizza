@@ -1,6 +1,9 @@
 import React from 'react'
-
-function    Products({product}) {
+import { setCartAc } from '../../redux/actions/cartAction';
+function Products({product, store}) {
+    const handleCartBtn = () => {
+        store.dispatch(setCartAc({product}))
+    }
   return (
     <div className="main__products">
         {
@@ -13,7 +16,7 @@ function    Products({product}) {
                                 <span className="main__product-name">{item.name}</span>
                                 <span className="main__product-price">$ {item.price}.00</span>
                             </div>
-                            <button className="main__product-btn">+</button>
+                            <button className="main__product-btn" onClick={handleCartBtn}>+</button>
                         </div>
                     </div>
                 )

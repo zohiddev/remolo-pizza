@@ -234,7 +234,7 @@
                         cursor: pointer;
                         border: none;
                         background-color: transparent;
-                        &.active:first-child {
+                        &.active {
                             svg path {
                                 fill: $red-color;
                             }
