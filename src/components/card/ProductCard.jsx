@@ -1,11 +1,12 @@
 import { formatCurrency, getAbsolutePrice } from "..";
+import { setCartAC } from "../../redux/actions/cartActions";
 import { Icon } from "../ui/Icon";
 
 export const ProductCard = ({ product, store }) => {
-  const { image, name, price, discount} = product;
+  const { image, name, price, discount } = product;
 
   const handleCardButton = () => {
-    store.setCart(product)
+    store.dispatch(setCartAC({ product }))
   }
   return (
     <div className="product-card">

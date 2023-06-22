@@ -1,12 +1,22 @@
 import { formatCurrency, getAbsolutePrice } from "..";
+import { decreaseQtyAC, deleteCartAC, increaseQtyAC } from "../../redux/actions/cartActions";
 import { QuantitySelect } from "../selects/QuantitySelect";
 import { Icon } from "../ui/Icon";
+import { Quantity } from "../ui/Quantity";
 
 export const ProductCardMini = ({ product, store }) => {
-  const { image, name, price, discount, quantity, id } = product;
+  const { image, name, price, discount, qty, id } = product;
 
   const handleCartItemDelete = (id) => {
-    store.deleteCart(id)
+    store.dispatch(deleteCartAC({ id }))
+  }
+
+  const handleIncrease = () => {
+    store.dispatch(increaseQtyAC({ id }))
+  }
+
+  const handleDecrease = () => {
+    store.dispatch(decreaseQtyAC({ id }))
   }
 
   return (
@@ -23,7 +33,7 @@ export const ProductCardMini = ({ product, store }) => {
             )}
           </p>
         </div>
-        <QuantitySelect quantity={quantity} />
+        <Quantity increase={handleIncrease} decrease={handleDecrease} quantity={qty} />
         <Icon clickHandler={() => handleCartItemDelete(id)} additionalClasses={["product-card--mini__icon close-icon"]}>
           <svg
             width="12"

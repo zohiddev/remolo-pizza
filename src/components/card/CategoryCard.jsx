@@ -1,11 +1,11 @@
+import { setActiveCategotyAC } from "../../redux/actions/cartActions";
 import { Icon } from "../ui/Icon";
 
 export const CategoryCard = ({ data, activeCategory, store }) => {
   const { id, icon, name } = data
 
   const handleCategoryChange = () => {
-    // store.setActiveCategory(name)
-    store.dispatch({ type: "setActiveCategory", payload: {name}})
+    store.dispatch(setActiveCategotyAC({categoryName: name}))
   }
 
   return (

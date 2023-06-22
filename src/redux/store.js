@@ -1,6 +1,9 @@
-import { render } from "react-dom";
 import { categoriesData } from "../data/categories";
 import products from "../data/products.json"
+import CartReducers from "./reducers/cardReducers";
+import CategoriesReducers from "./reducers/categoriesReducers";
+import ProductReducers from "./reducers/productReducers";
+
 
 export const store = {
     _state: {
@@ -21,34 +24,11 @@ export const store = {
     getState: () => store._state,
 
     dispatch: (action) => {
-        const { type, payload } = action;
-        if (type = "setActiveCategory") {
-            store._state.categories.activeCategory = payload.categoryName;
-        } else if (type = "setCart") {
-            store._state.cart.items = [...store._state.cart.items, payload.product]
-        } else if (type = "deleteCart") {
-            store._state.cart.items = store._state.cart.items.filter(
-                (item) => item.id !== payload.id
-            )
-        }
+        store._state.categories = CategoriesReducers(store._state.categories,action)
+        store._state.products = ProductReducers(store._state.products, action)
+        store._state.cart = CartReducers(store._state.cart, action)
+        store.render()
     },
-
-    // setActiveCategory: (categoryName) => {
-    //     store._state.categories.activeCategory = categoryName;
-    //     store.render()
-    // },
-
-    // setCart: (product) => {
-    //     store._state.cart.items = [...store._state.cart.items, product]
-    //     store.render()
-    // },
-
-    // deleteCart: (id) => {
-    //     store._state.cart.items = store._state.cart.items.filter(
-    //         (item) => item.id !== id
-    //     )
-    //     store.render()
-    // },
 
     subscribe: (collback) => {
         store.render = collback

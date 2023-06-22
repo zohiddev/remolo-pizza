@@ -44,6 +44,12 @@ img {
   }
 }
 
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
 #root {
   @include mixins.flex(flex-start, unset);
   position: relative;
