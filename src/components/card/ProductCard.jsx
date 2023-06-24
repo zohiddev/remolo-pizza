@@ -4,9 +4,9 @@ import { StoreContext } from "../../context/storeContext";
 import { setCartAc } from "../../redux/reducers/actions/cartActions";
 import { Icon } from "../ui/Icon";
 
-export const ProductCard = ({ product, store }) => {
+export const ProductCard = ( {product} ) => {
 
-  const { image, name, price, discount } = product
+  const { image, name, price, discount } = product    
 
   const { dispatch } = useContext(StoreContext)
 
