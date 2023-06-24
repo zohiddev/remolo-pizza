@@ -29,6 +29,11 @@ body {
 button span {
   pointer-events: none;
 }
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
 
 img {
   width: 100%;

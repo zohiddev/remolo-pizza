@@ -1,0 +1,35 @@
+@use '../../../assets/scss/mixins/mixins';
+@use '../../../assets/scss/global/functions' as fn;
+@use '../../../assets/scss/global/variables' as var;
+
+/********************
+** Quantity Styles **
+********************/
+.quantity__wrapper {
+    @include mixins.flex(center, unset);
+    gap: 6px;
+    position: relative;
+
+    .quantity {
+        @include mixins.flex(center, center);
+        width: 28px;
+        height: 28px;
+        background-color: var.$icon--color;
+        border-radius: 8px;
+
+        &__text {
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 15px;
+            color: #fff;
+        }
+    }
+
+    .decrease,
+    .increase {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var.$icon--color;
+    }
+}

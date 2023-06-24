@@ -2,11 +2,14 @@ import { Icon } from "../ui/Icon";
 import { CartProductsList } from "../lists/CartProductsList";
 import { CartCheckout } from "../actions/CartCheckout";
 import deleteIconSvg from "/src/assets/images/icons/delete-icon.svg";
+import { useContext } from "react";
 
-export const Cart = ({ cartProductsData }) => {
+export const Cart = () => {
   const delivery = 100;
   const total = 1650;
-
+  const { getState } = useContext()
+  const { cart } = getState()
+  const cartProductsData = cart.items
   return (
     <div className="cart">
       <h2 className="cart__title">Mi orden</h2>

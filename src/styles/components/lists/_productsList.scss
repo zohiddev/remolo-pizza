@@ -6,7 +6,7 @@
 ** Products List Styles **
 *************************/
 .products__list {
-    @include mixins.flex(flex-start, unset);
+    @include mixins.flex(flex-start, center);
     flex: 1 1 auto;
     flex-wrap: wrap;
     gap: 20px;

@@ -1,15 +1,32 @@
+import { useContext } from "react";
 import { formatCurrency, getAbsolutePrice } from "..";
-import { QuantitySelect } from "../selects/QuantitySelect";
+import { decreaseQtyAc, deleteCartAc, increaseQtyAc } from "../../redux/reducers/actions/cartActions";
 import { Icon } from "../ui/Icon";
+import { Quantity } from "../ui/Quatity";
+import { StoreContext } from "../../context/storeContext";
 
-export const ProductCardMini = ({
-  id,
-  image,
-  name,
-  price,
-  discount,
-  quantity,
-}) => {
+
+
+export const ProductCardMini = ({ product }) => {
+  const { id,
+    image,
+    name,
+    price,
+    discount,
+   qty } = product;
+
+  const dispatch = useContext(StoreContext)
+
+  const handleCartItemDelete = (id) => {
+    dispatch(deleteCartAc({ id }))
+  }
+  const handleIncrease = () => {
+    dispatch(increaseQtyAc({ id }))
+  }
+  const handleDecrease = () => {
+    dispatch(decreaseQtyAc({ id }))
+  }
+
   return (
     <div className="product-card--mini">
       <div className="product-card--mini__img img">
@@ -24,8 +41,8 @@ export const ProductCardMini = ({
             )}
           </p>
         </div>
-        <QuantitySelect quantity={quantity} />
-        <Icon additionalClasses={["product-card--mini__icon close-icon"]}>
+        <Quantity increase={handleIncrease} decrease={handleDecrease} quantity={qty} />
+        <Icon clickHandler={() => handleCartItemDelete(id)} additionalClasses={["product-card--mini__icon close-icon"]}>
           <svg
             width="12"
             height="12"

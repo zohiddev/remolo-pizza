@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { ProductsList, CardButtonMobile, CategoriesList, Header } from "..";
-import { categoriesData } from "../../data/categories";
-import productsData from "../../data/products.json";
+import { store } from "../../redux/store";
+import { StoreContext } from "../../context/storeContext";
 
 export const HomePage = () => {
-  const [activeCategory, setActiveCategory] = useState(1);
+  const { getState } = useContext(StoreContext)
+  const { categories, products } = getState();
+
 
   return (
     <main className="main home-page">
@@ -15,11 +17,11 @@ export const HomePage = () => {
           Elige nuestras deliciosas pizzas
         </p>
         <CategoriesList
-          categoriesData={categoriesData}
-          activeCategory={activeCategory}
+          categoriesData={categories.items}
+          activeCategory={categories.activeCategory}
         />
       </div>
-      <ProductsList productsData={productsData} />
+      <ProductsList productsData={products.items.filter((item) => item.category !== categories.activeCategory)} />
       <CardButtonMobile />
     </main>
   );
