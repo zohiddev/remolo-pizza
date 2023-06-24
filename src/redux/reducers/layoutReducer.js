@@ -1,13 +1,13 @@
 import * as actions from '../actionTypes';
 
-export const layoutReducerState = {
+export const initialState = {
     isNavbarOpen: false,
     isCartOpen: false,
     activeCategory: 1,
     activePage: 'Inicio'
 }
 
-export const layoutReducer = (state = layoutReducerState, action) => {
+export const layoutReducer = (state = initialState, action) => {
     const {type, payload} = action;
     switch (type) {
         case actions.NAVBAR_TOGGLED:

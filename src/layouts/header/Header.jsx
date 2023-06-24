@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Input, BurgerIcon, Icon, navbarToggled } from "..";
+import { debounce } from "lodash";
 import searchIconSvg from "/src/assets/images/icons/search-icon.svg";
 import closeIconSvg from "/src/assets/images/icons/close-icon.svg";
+import { useEffect } from "react";
 
 const SearchIcon = ({ onClick }) => {
   return (
@@ -14,8 +16,19 @@ const SearchIcon = ({ onClick }) => {
 
 export const Header = () => {
   const [isInputOpen, setIsInputOpen] = useState(false);
+  const [query, setQuery] = useState("");
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log(query);
+  }, [query]);
+
+  const onChangeHandler = (e) => {
+    debounce(function () {
+      console.log(e.target.value);
+    });
+  };
 
   return (
     <div className={`header ${isInputOpen ? "input-open" : ""}`} id="header">
@@ -24,6 +37,7 @@ export const Header = () => {
           icon={<SearchIcon />}
           placeholder="Busca algo de nuestro menu..."
           additionalClasses={["search"]}
+          onChange={(e) => onChangeHandler(e)}
         />
         <Icon
           additionalClasses={["close-icon"]}

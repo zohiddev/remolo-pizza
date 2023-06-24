@@ -24,6 +24,10 @@
     
     @include mixins.media(1440) {
         padding-bottom: 80px;
+
+        .product-card {
+            width: calc(100% / 3);
+        }
     }
 
     @include mixins.media(630) {

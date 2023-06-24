@@ -25,7 +25,7 @@
         overflow: hidden;
 
         img {
-            object-fit: cover;
+            object-fit: contain;
         }
 
         @include mixins.media(1440) {
