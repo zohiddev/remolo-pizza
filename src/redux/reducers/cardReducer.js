@@ -1,7 +1,13 @@
 import React from 'react'
+const initialState = {
+    cart: {
+        items: []
+    }
+}
+
 import { DECREASE_QTY, DELETE__CART, INCREASE_QTY, SET__CART } from './actions/cartActions'
 
-function CartReducer(state, action) {
+function CartReducer(state = initialState, action) {
     const { type, payload } = action
 
     switch (type) {

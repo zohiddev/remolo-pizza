@@ -2,15 +2,14 @@ import { Icon } from "../ui/Icon";
 import { CartProductsList } from "../lists/CartProductsList";
 import { CartCheckout } from "../actions/CartCheckout";
 import deleteIconSvg from "/src/assets/images/icons/delete-icon.svg";
-import { useContext } from "react";
-import { StoreContext } from "../../context/storeContext";
+import { useSelector } from "react-redux";
 
 export const Cart = () => {
+  const { cart } = useSelector((state)=> state)
+  const cartProductsData = cart.items
   const delivery = 100;
   const total = 1650;
-  const { getState } = useContext(StoreContext)
-  const { cart } = getState()
-  const cartProductsData = cart.items
+
   return (
     <div className="cart">
       <h2 className="cart__title">Mi orden</h2>

@@ -1,11 +1,8 @@
-import { useContext } from "react";
 import { ProductsList, CardButtonMobile, CategoriesList, Header } from "..";
-import { store } from "../../redux/store";
-import { StoreContext } from "../../context/storeContext";
+import { useSelector } from "react-redux";
 
 export const HomePage = () => {
-  const { getState } = useContext(StoreContext)
-  const { categories, products } = getState();
+  const { categories, products } = useSelector((state) => state)
 
 
   return (

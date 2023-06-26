@@ -13,9 +13,9 @@ export const ProductCardMini = ({ product }) => {
     name,
     price,
     discount,
-   qty } = product;
+    qty } = product;
 
-  const dispatch = useContext(StoreContext)
+  const { dispatch } = useContext(StoreContext)
 
   const handleCartItemDelete = (id) => {
     dispatch(deleteCartAc({ id }))

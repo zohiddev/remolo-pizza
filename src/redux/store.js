@@ -1,39 +1,14 @@
-import { categoriesData } from "../data/categories";
-import products from '../data/products.json'
-import CartReducer from "./reducers/cardReducer";
-import CategoriesReducer from "./reducers/categoriesReducer";
-import ProductsReducer from "./reducers/productsReducer";
+import { combineReducers, createStore } from '@reduxjs/toolkit'
+import productsSlice from './slices/productsSlice'
+import cartSlice from './slices/cartSlice'
+import categoriesSlice from './slices/categoriesSlice'
 
+const reducers = combineReducers({
+    categories: categoriesSlice,
+    products: productsSlice,
+    cart: cartSlice,
+})
 
-export const store = {
+const store = createStore(reducers)
 
-    __state: {
-        categories: {
-            activeCategory: 'Pizza',
-            items: categoriesData,
-        },
-        products: {
-            items: products,
-        },
-        cart: {
-            items: []
-        }
-    },
-
-    getState: () => store.__state,
-
-    dispatch: (action) => {
-
-        store.__state.categories = CategoriesReducer(store.__state.categories, action)
-
-        store.__state.products = ProductsReducer(store.__state.products, action)
-
-        store.__state.cart = CartReducer(store.__state.cart, action)
-
-        store.render()
-    },
-
-    subscribe: (callback) => {
-        store.render = callback
-    },
-}
+export default store

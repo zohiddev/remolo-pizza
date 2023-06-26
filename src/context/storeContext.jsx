@@ -1,6 +1,5 @@
 import { createContext } from "react";
-import { store } from "../redux/store";
-
+import store from "../redux/store";
 const StoreContext = createContext(store)
 
 function StoreProvider(props) {

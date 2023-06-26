@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { categoriesData } from "../../data/categories";
-const initalStete ={
+const initialState ={
  activeCategory: 'Pizza',
  items: categoriesData,   
 }
@@ -11,10 +11,9 @@ const categoriesSlice = createSlice({
     initialState,
     reducers: {
         setActiveCategory: (state, action) =>{
-            state.activeCategory = action.payload
+            state.activeCategory = action.payload 
         }
     }
 })
-
 export default categoriesSlice.reducer
 export const {setActiveCategory} = categoriesSlice.actions
