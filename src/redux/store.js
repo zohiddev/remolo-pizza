@@ -1,14 +1,14 @@
-import { combineReducers, createStore } from '@reduxjs/toolkit'
+import { applyMiddleware, combineReducers, configureStore } from '@reduxjs/toolkit'
 import productsSlice from './slices/productsSlice'
 import cartSlice from './slices/cartSlice'
 import categoriesSlice from './slices/categoriesSlice'
 
-const reducers = combineReducers({
+const reducer = combineReducers({
     categories: categoriesSlice,
     products: productsSlice,
     cart: cartSlice,
 })
 
-const store = createStore(reducers)
+const store = configureStore({reducer}, applyMiddleware(thunk))
 
 export default store

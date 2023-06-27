@@ -1,5 +1,4 @@
 import { Icon } from "../ui/Icon";
-import { activeCartAc } from "../../redux/reducers/actions/cartActions";
 import { useDispatch } from "react-redux";
 import { setActiveCategory } from "../../redux/slices/categoriesSlice";
 
@@ -13,8 +12,8 @@ export const CategoryCard = ({ data, activeCategory }) => {
 
 
   return (
-    <button className={`category ${data.name === activeCategory ? "active" : ""}`}
-      onClick={() => handleCategoryChange(data.name)}
+    <button className={`category ${data.id === activeCategory ? "active" : ""}`}
+      onClick={() => handleCategoryChange(data.id)}
     >
       <Icon additionalClasses={["category__icon"]}>{icon}</Icon>
       <h4 className="category__name">{name}</h4>

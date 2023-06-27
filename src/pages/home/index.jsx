@@ -1,9 +1,16 @@
+import { useEffect } from "react";
 import { ProductsList, CardButtonMobile, CategoriesList, Header } from "..";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getCategories } from "../../redux/actions/categoryActions";
+import { getProducts } from "../../redux/actions/categoryActions";
 
 export const HomePage = () => {
   const { categories, products } = useSelector((state) => state)
-
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getCategories)
+    dispatch(getProducts())
+  }, [])
 
   return (
     <main className="main home-page">
@@ -13,12 +20,24 @@ export const HomePage = () => {
         <p className="home-page__description">
           Elige nuestras deliciosas pizzas
         </p>
-        <CategoriesList
-          categoriesData={categories.items}
-          activeCategory={categories.activeCategory}
-        />
+        {categories.loading ? (
+          <h1>Loading...</h1>
+        ) : (
+          <CategoriesList
+            categoriesData={categories.items}
+            activeCategory={categories.activeCategory}
+          />
+        )}
+
+
       </div>
-      <ProductsList productsData={products.items.filter((item) => item.category !== categories.activeCategory)} />
+      {
+        products.loading ? (<h1>Loading.... </h1>
+        ) : (
+          <ProductsList productsData={products.items.filter((item) => item.category !== categories.activeCategory)} />
+
+        )
+      }
       <CardButtonMobile />
     </main>
   );

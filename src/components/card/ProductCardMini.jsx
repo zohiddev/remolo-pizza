@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { formatCurrency, getAbsolutePrice } from "..";
-import { decreaseQtyAc, deleteCartAc, increaseQtyAc } from "../../redux/reducers/actions/cartActions";
 import { Icon } from "../ui/Icon";
 import { Quantity } from "../ui/Quatity";
 import { StoreContext } from "../../context/storeContext";
+import { decreaseQty, deleteCart, increaseQty } from "../../redux/slices/cartSlice";
 
 
 
@@ -18,13 +18,13 @@ export const ProductCardMini = ({ product }) => {
   const { dispatch } = useContext(StoreContext)
 
   const handleCartItemDelete = (id) => {
-    dispatch(deleteCartAc({ id }))
+    dispatch(deleteCart({ id }))
   }
   const handleIncrease = () => {
-    dispatch(increaseQtyAc({ id }))
+    dispatch(increaseQty({ id }))
   }
   const handleDecrease = () => {
-    dispatch(decreaseQtyAc({ id }))
+    dispatch(decreaseQty({ id }))
   }
 
   return (

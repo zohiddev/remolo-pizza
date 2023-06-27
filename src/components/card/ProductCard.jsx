@@ -1,5 +1,5 @@
 import { formatCurrency, getAbsolutePrice } from "..";
-import { setCartAc } from "../../redux/reducers/actions/cartActions";
+import { setCart } from "../../redux/slices/cartSlice";
 import { Icon } from "../ui/Icon";
 import { useDispatch } from "react-redux";
 
@@ -11,7 +11,7 @@ export const ProductCard = ( {product} ) => {
 
   const handleCartButton = () => {
 
-    dispatch(setCartAc({ product }))
+    dispatch(setCart({ product }))
 
   }
 
