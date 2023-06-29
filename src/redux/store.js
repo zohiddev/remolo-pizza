@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, configureStore } from '@reduxjs/toolkit'
+import categoriesSlice from './slices/categoriesSlice'
 import productsSlice from './slices/productsSlice'
 import cartSlice from './slices/cartSlice'
-import categoriesSlice from './slices/categoriesSlice'
 
 const reducer = combineReducers({
     categories: categoriesSlice,
