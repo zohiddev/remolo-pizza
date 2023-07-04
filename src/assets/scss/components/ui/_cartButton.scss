@@ -1,0 +1,26 @@
+/***********************
+** Cart Button Styles **
+***********************/
+.cart-button {
+  @include flex(center, unset);
+  gap: 25px;
+  padding: 12px 24px;
+  background-color: $main--color;
+
+  .text__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #fff;
+  }
+
+  svg path {
+    fill: #fff;
+  }
+}

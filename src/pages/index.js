@@ -1,21 +1,17 @@
-import { HomePage } from "./home";
-import { Input } from '../components/form/Input';
-import { Icon } from '../components/ui/Icon';
-import { CartButton } from '../components/ui/CartButton';
-import { ProductCard } from "../components/card/ProductCard";
-import { ProductsList } from "../components/lists/ProductsList";
-import { CardButtonMobile } from "../components/card/CardButtonMobile";
-import { CategoriesList } from "../components/lists/CategoriesList";
-import { Header } from "../components/header";
+import { HomePage } from './home'
+import { Help } from './help/index'
+import { Favourites } from './favourites/index'
+import { Settings } from './settings/index'
+import { CategoriesPage } from './categories/index'
+import { ProductsPage } from './products/index'
+import { Login } from './login/index'
 
 export {
-    HomePage,
-    Input,
-    Icon,
-    ProductCard,
-    CartButton,
-    ProductsList,
-    CardButtonMobile,
-    CategoriesList,
-    Header
-};
+  HomePage,
+  Help,
+  Favourites,
+  Settings,
+  CategoriesPage,
+  ProductsPage,
+  Login,
+}

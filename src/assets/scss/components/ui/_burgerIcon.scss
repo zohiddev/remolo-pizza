@@ -1,0 +1,20 @@
+/****************
+** Icon Styles **
+****************/
+.icon.burger-menu {
+  @include flex(flex-end, space-between);
+  flex-direction: column;
+  position: relative;
+  width: 30px;
+  height: 25px;
+
+  .line {
+    width: 100%;
+    border: 2px solid $icon--color;
+    border-radius: 5px;
+
+    &:last-child {
+      width: 50%;
+    }
+  }
+}

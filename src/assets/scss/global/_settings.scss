@@ -1,5 +1,5 @@
-@use '../mixins/mixins';
-@use './variables' as var;
+@import '../mixins/mixins';
+@import './variables';
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
 // body.open-modal,
@@ -14,7 +14,7 @@
 
 body {
   background-color: #fafafd;
-  font-family: var.$main--font;
+  font-family: $main--font;
 }
 
 // body.show {
@@ -44,15 +44,21 @@ img {
   }
 }
 
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
 #root {
-  @include mixins.flex(flex-start, unset);
+  @include flex(flex-start, unset);
   position: relative;
   max-height: 100vh;
   height: 100%;
   overflow: hidden;
 
   #main-content__row {
-    @include mixins.flex(flex-start, unset);
+    @include flex(flex-start, unset);
     position: relative;
     flex: 1 1 auto;
     height: 100%;
@@ -64,4 +70,8 @@ img {
   max-width: 1180px;
   padding: 0 20px;
   margin: 0 auto;
+}
+
+.main {
+  flex: 1 1 auto;
 }

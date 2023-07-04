@@ -1,0 +1,31 @@
+/********************
+** Quantity Styles **
+********************/
+.quantity__wrapper {
+  @include flex(center, unset);
+  gap: 6px;
+  position: relative;
+
+  .quantity {
+    @include flex(center, center);
+    width: 28px;
+    height: 28px;
+    background-color: $icon--color;
+    border-radius: 8px;
+
+    &__text {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 15px;
+      color: #fff;
+    }
+  }
+
+  .decrease,
+  .increase {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: $icon--color;
+  }
+}

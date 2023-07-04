@@ -1,0 +1,36 @@
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: $white;
+
+  &__container {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__imageWrapper {
+    width: 500px;
+    height: 500px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__input,
+  &__button {
+    border: 1px solid #000;
+  }
+}

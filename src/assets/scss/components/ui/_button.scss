@@ -1,0 +1,22 @@
+/******************
+** Button Styles **
+******************/
+.button {
+  text-align: center;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &--primary {
+    padding: px-to-rem(16px) px-to-rem(32px);
+    background-color: $primary-btn--color;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: px-to-percent(27px);
+    color: #fff;
+
+    &:hover {
+      background-color: $black--color;
+    }
+  }
+}

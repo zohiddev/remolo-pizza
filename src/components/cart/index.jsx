@@ -2,8 +2,11 @@ import { Icon } from "../ui/Icon";
 import { CartProductsList } from "../lists/CartProductsList";
 import { CartCheckout } from "../actions/CartCheckout";
 import deleteIconSvg from "/src/assets/images/icons/delete-icon.svg";
+import { useSelector } from "react-redux";
 
-export const Cart = ({ cartProductsData }) => {
+export const Cart = () => {
+  const { cart } = useSelector((state) => state);
+  const cartProductsData = cart.items;
   const delivery = 100;
   const total = 1650;
 
