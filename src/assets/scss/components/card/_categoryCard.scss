@@ -1,0 +1,72 @@
+/*************************
+** Category Card Styles **
+*************************/
+.category {
+  @include flex(center, unset);
+  display: inline-flex;
+  gap: 15px;
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+  background-color: transparent;
+
+  @include media(630) {
+    &__name {
+      display: none;
+    }
+
+    &__icon {
+      @include flex-center();
+      width: 50px;
+      height: 50px;
+      background-color: #e8e8e8;
+      border-radius: 16px;
+    }
+
+    &::after,
+    &::before {
+      display: none;
+    }
+
+    &.active {
+      .category__icon {
+        background-color: $main--color;
+
+        svg path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  svg path {
+    fill: $black--color;
+  }
+
+  &__name {
+    font-size: px-to-rem(18px);
+    font-weight: 600;
+    line-height: px-to-percent(27px, 18px);
+    color: $black--color;
+  }
+
+  &.active {
+    svg path {
+      fill: $main--color;
+    }
+
+    .category__name {
+      color: $main--color;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border: 1px solid $main--color;
+      border-radius: 5px;
+    }
+  }
+}

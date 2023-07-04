@@ -1,6 +1,6 @@
 import { CategoryCard } from "../card/CategoryCard";
 
-export const CategoriesList = ({ categoriesData, activeCategory }) => {
+export const CategoriesList = ({ categoriesData, activeCategory, store }) => {
   return (
     <div className="categories__list">
       {categoriesData.map((category) => (

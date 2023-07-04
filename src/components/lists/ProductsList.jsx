@@ -4,10 +4,7 @@ export const ProductsList = ({ productsData }) => {
   return (
     <div className="products__list">
       {productsData.map((product) => (
-        <ProductCard
-          key={product.id}
-          product={product}
-        />
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );

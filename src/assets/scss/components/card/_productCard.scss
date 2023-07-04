@@ -1,0 +1,58 @@
+/************************
+** Product Card Styles **
+************************/
+.product-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  @include adaptive-value('width', 260, 156);
+  background: #fff;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+
+  &__img {
+    position: relative;
+    width: 100%;
+  }
+
+  &__content {
+    position: relative;
+    padding: 13px;
+    padding-bottom: 38px;
+  }
+
+  &__icon {
+    @include flex-center();
+    position: absolute;
+    right: px-to-rem(10px);
+    bottom: px-to-rem(10px);
+    width: 40px;
+    height: 40px;
+    border: 1px solid $grey--color;
+    border-radius: 13px;
+
+    &.active {
+      border: none;
+      background-color: $black--color;
+    }
+  }
+
+  &__name,
+  &__price {
+    @include font(16, 13, 500, px-to-percent(24px));
+  }
+
+  &__name {
+    color: $text--color;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__price {
+    font-weight: 600;
+    color: $main--color;
+  }
+}

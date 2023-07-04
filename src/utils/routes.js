@@ -1,27 +1,29 @@
-import { Somsa } from "../pages/Somsa/Somsa";
-import { Napitka } from "../pages/Napitka/Napitka";
-import { Disert } from "../pages/Disert/Disert";
-import { HomePage } from "../pages";
+import { Favourites, Help, HomePage, Settings } from '../pages'
 
 export const routes = [
   {
     id: 1,
-    path: "/",
+    path: '/',
     component: HomePage,
   },
   {
     id: 2,
-    path: "/Somsa",
-    component: Somsa,
+    path: '/favourites',
+    component: Favourites,
   },
   {
     id: 3,
-    path: "/Napitka",
-    component: Napitka,
+    path: '/settings',
+    component: Settings,
   },
   {
     id: 4,
-    path: "/Disert",
-    component: Disert,
+    path: '/help',
+    component: Help,
   },
-];
+  {
+    id: 5,
+    path: '*',
+    component: HomePage,
+  },
+]

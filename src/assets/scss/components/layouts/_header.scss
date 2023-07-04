@@ -1,0 +1,72 @@
+/******************
+** Header Styles **
+******************/
+.header {
+  position: relative;
+  width: 100%;
+
+  &__mobile {
+    @include flex(center, space-between);
+    display: none;
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+
+    .burger-menu {
+      align-items: flex-start;
+    }
+
+    .icon.search-icon {
+      width: 29px;
+      height: 29px;
+    }
+
+    &.open {
+      .burger-menu {
+        align-items: flex-end;
+      }
+    }
+  }
+
+  .search-input__wrapper {
+    position: relative;
+
+    .close-icon {
+      @include flex(center, center);
+      position: absolute;
+      display: none;
+      top: 50%;
+      right: 10px;
+      padding: 10px;
+      transform: translateY(-50%);
+
+      @include media(920) {
+        display: flex;
+      }
+    }
+  }
+
+  &.input-open {
+    .search-input__wrapper {
+      display: flex;
+
+      .input.search {
+        padding-right: 42px;
+      }
+    }
+
+    .header__mobile {
+      display: none;
+    }
+  }
+
+  @include media(920) {
+    &__mobile {
+      display: flex;
+    }
+
+    .search-input__wrapper {
+      display: none;
+    }
+  }
+}

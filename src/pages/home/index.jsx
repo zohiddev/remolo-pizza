@@ -1,44 +1,52 @@
-import { useEffect } from "react";
-import { ProductsList, CardButtonMobile, CategoriesList, Header } from "..";
-import { useDispatch, useSelector } from "react-redux";
-import { getCategories } from "../../redux/actions/categoryActions";
-import { getProducts } from "../../redux/actions/categoryActions";
+import { useEffect } from 'react'
+import {
+  ProductsList,
+  CardButtonMobile,
+  CategoriesList,
+  Header,
+} from '../../components'
+import { useDispatch, useSelector } from 'react-redux'
+import { getCategories, getProducts, loginRequest } from '../../redux/actions/categoryActions'
 
 export const HomePage = () => {
   const { categories, products } = useSelector((state) => state)
   const dispatch = useDispatch()
+
   useEffect(() => {
-    dispatch(getCategories)
+    dispatch(getCategories())
     dispatch(getProducts())
+    dispatch(loginRequest())
   }, [])
 
   return (
-    <main className="main home-page">
-      <div className="fixed">
-        <Header />
-        <h1 className="home-page__title">Categorias</h1>
-        <p className="home-page__description">
-          Elige nuestras deliciosas pizzas
-        </p>
-        {categories.loading ? (
+    <>
+      <main className='main home-page'>
+        <div className='fixed'>
+          <Header />
+          <h1 className='home-page__title'>Categorias</h1>
+          <p className='home-page__description'>
+            Elige nuestras deliciosas pizzas
+          </p>
+          {categories.loading ? (
+            <h1>Loading...</h1>
+          ) : (
+            <CategoriesList
+              categoriesData={categories.items}
+              activeCategory={categories.activeCategory}
+            />
+          )}
+        </div>
+        {products.loading ? (
           <h1>Loading...</h1>
         ) : (
-          <CategoriesList
-            categoriesData={categories.items}
-            activeCategory={categories.activeCategory}
+          <ProductsList
+            productsData={products.items.filter(
+              (item) => item.category === categories.activeCategory
+            )}
           />
         )}
-
-
-      </div>
-      {
-        products.loading ? (<h1>Loading.... </h1>
-        ) : (
-          <ProductsList productsData={products.items.filter((item) => item.category !== categories.activeCategory)} />
-
-        )
-      }
-      <CardButtonMobile />
-    </main>
-  );
-};
+        <CardButtonMobile />
+      </main>
+    </>
+  )
+}

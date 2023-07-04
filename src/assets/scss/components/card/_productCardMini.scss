@@ -1,0 +1,78 @@
+/*****************************
+** Product Card Mini Styles **
+*****************************/
+.product-card--mini {
+  display: flex;
+  flex-direction: row;
+  gap: px-to-rem(15px);
+  flex-shrink: 0;
+  position: relative;
+  max-width: 392px;
+  padding: px-to-rem(13px);
+  border-radius: 16px;
+  background-color: #fff;
+  overflow: hidden;
+
+  &__img {
+    position: relative;
+    @include adaptive-value('width', 110, 65);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  &__content {
+    @include flex(unset, space-between);
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  &__name {
+    @include font(16, 13, 500, px-to-percent(24px));
+    color: $text--color;
+  }
+
+  &__price {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $secondary-grey--color;
+  }
+
+  &__quantity {
+    max-width: 40px;
+    padding: px-to-rem(5px) px-to-rem(10px);
+    background-color: $bg--color;
+    border-radius: 5px;
+
+    &,
+    option {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      color: $secondary-grey--color;
+    }
+  }
+
+  &__icon {
+    @include flex-center();
+    position: absolute;
+    top: px-to-rem(17px);
+    right: px-to-rem(17px);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    svg path {
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      background-color: $grey--color;
+
+      svg path {
+        fill: $main--color;
+      }
+    }
+  }
+}
