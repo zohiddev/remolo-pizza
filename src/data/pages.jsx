@@ -76,3 +76,39 @@ export const pagesData = [
     url: '/help',
   },
 ]
+
+export const adminNavbarData = [
+  {
+    id: 1,
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='24'
+        height='24'
+        viewBox='0 0 24 24'
+      >
+        <path d='M15.16 2a1 1 0 0 0-.66.13l-12 7a.64.64 0 0 0-.13.1l-.1.08a1.17 1.17 0 0 0-.17.26.84.84 0 0 0-.1.43v10a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V10a8.08 8.08 0 0 0-6.84-8zm0 2.05A6.07 6.07 0 0 1 19.93 9H6.7zM20 19H4v-8h16z'></path>
+        <circle cx='6.5' cy='16.5' r='1.5'></circle>
+        <circle cx='11.5' cy='13.5' r='1.5'></circle>
+        <circle cx='17' cy='16' r='2'></circle>
+      </svg>
+    ),
+    name: 'Products',
+    url: '/products',
+  },
+  {
+    id: 2,
+    icon: (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='24'
+        height='24'
+        viewBox='0 0 24 24'
+      >
+        <path d='M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm1-6h4v4H5V5zm15-2h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 6h-4V5h4v4zm-9 12a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6zm-5-6h4v4H5v-4zm13-1h-2v2h-2v2h2v2h2v-2h2v-2h-2z'></path>
+      </svg>
+    ),
+    name: 'Categories',
+    url: '/categories',
+  },
+]

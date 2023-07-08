@@ -15,6 +15,7 @@
   padding: 30px 0;
   background-color: $secondary-bg--color;
   transition: all 0.1s ease;
+  z-index: 9;
   overflow: hidden;
 
   @include media(920) {
