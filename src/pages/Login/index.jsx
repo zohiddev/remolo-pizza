@@ -1,51 +1,73 @@
 import React, { useState } from 'react'
+import loginImg from '../../assets/images/login-image.jpg'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 import { loginRequest } from '../../redux/actions/authActions'
 
-export const LoginPage = () => {
-  const initialFromState = {
+export const Login = () => {
+  const initialFormState = {
     email: '',
-    password: ''
+    password: '',
   }
-  const { loading } = useSelector(state => state.auth)
+  const { loading } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
-  const [formState, setFromState] = useState(initialFromState)
+  const [formState, setFormState] = useState(initialFormState)
 
   const onInputChange = (e) => {
     const { value, name } = e.target
-
-    setFromState({ ...formState, [name]: value })
+    setFormState({ ...formState, [name]: value })
   }
 
-
-  const onSubmit = (e) => {
-    e.preventDefault()
+  const onSubmit = () => {
     if (formState.email.trim() === '' || formState.password.trim() === '') {
-      return alert('Yaz ahi bir narsa')
+      return alert("Maydonlarni to'ldiring")
     }
-    dispatch(loginRequest(formState))
 
+    dispatch(loginRequest(formState))
   }
 
   return (
-    <div className="login__page">
-      <div className="login-container">
-        <div className="form-container">
-          <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" className="illustration" />
-          <h1 className="opacity">LOGIN</h1>
-          <form>
-            <input onChange={onInputChange} id='email' type="text" name='email' placeholder="USERNAME:" />
-
-            <input id='password' onChange={onInputChange} type="password" name="password" placeholder="PASSWORD:" />
-
-            <button className="opacity" disabled={loading} onClick={onSubmit}>{loading ? 'Loading...' : 'SUBMIT'}</button>
-          </form>
-          <div className="register-forget opacity">
-            <Link to='#'>REGISTER</Link>
-            <Link to='#'>FORGOT PASSWORD</Link>
+    <div className='login-page'>
+      <div className='login-page__container'>
+        <div className='login-page__imageWrapper'>
+          <div className='login-page__image'>
+            <img src={loginImg} alt='login-img' />
           </div>
+        </div>
 
+        <div className='login-page__form'>
+          <div className='login-page__formGroup'>
+            <label htmlFor='email' className='login-page__label'>
+              Email:
+            </label>
+            <input
+              type='email'
+              name='email'
+              id='email'
+              onChange={onInputChange}
+              className='login-page__input'
+            />
+          </div>
+          <div className='login-page__formGroup'>
+            <label htmlFor='password' className='login-page__label'>
+              Password:
+            </label>
+            <input
+              type='password'
+              name='password'
+              id='password'
+              onChange={onInputChange}
+              className='login-page__input'
+            />
+          </div>
+          <div className='login-page__formGroup'>
+            <button
+              className='login-page__button'
+              disabled={loading}
+              onClick={onSubmit}
+            >
+              {loading ? 'Loading...' : 'Login'}
+            </button>
+          </div>
         </div>
       </div>
     </div>

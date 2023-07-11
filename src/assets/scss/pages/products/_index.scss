@@ -1,0 +1,21 @@
+.products {
+  width: 100%;
+  padding: 50px;
+
+  &-container {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  button {
+    border: 1px solid $black--color;
+    padding: 8px 12px;
+  }
+
+  input {
+    border: 1px solid $black--color;
+    margin-left: 12px;
+  }
+}

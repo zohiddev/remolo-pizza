@@ -1,4 +1,12 @@
-import { CategoriesPage, Favourites, Help, HomePage, LoginPage, ProductsPage, Settings } from '../pages'
+import {
+  CategoriesPage,
+  Favourites,
+  Help,
+  HomePage,
+  Login,
+  ProductsPage,
+  Settings,
+} from '../pages'
 
 export const routes = [
   {
@@ -24,7 +32,7 @@ export const routes = [
   {
     id: 5,
     path: '/login',
-    component: <LoginPage />,
+    component: <Login />,
   },
   {
     id: 6,
@@ -35,12 +43,12 @@ export const routes = [
 
 export const adminRoutes = [
   {
-    id: 1,
+    id: 8,
     path: '/products',
     component: <ProductsPage />,
   },
   {
-    id: 2,
+    id: 9,
     path: '/categories',
     component: <CategoriesPage />,
   },

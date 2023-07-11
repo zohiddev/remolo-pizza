@@ -1,0 +1,20 @@
+.pageHeader {
+  width: 100%;
+  background-color: $white;
+  border-radius: 12px;
+  padding: 12px;
+
+  &-row {
+    @include flex(center, space-between);
+  }
+
+  &-title {
+    font-size: 16px;
+  }
+}
+
+.space {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

@@ -2,10 +2,16 @@ import { HomePage } from './home'
 import { Help } from './help/index'
 import { Favourites } from './favourites/index'
 import { Settings } from './settings/index'
-import { ProductsPage } from './Products/index';
-import { CategoriesPage } from './Categories/index';
-import { LoginPage } from './Login/index';
-import { PageHeader } from './../components/ui/PageHeader';
-import { Table } from './../components/ui/Table';
+import { CategoriesPage } from './categories/index'
+import { ProductsPage } from './products/index'
+import { Login } from './login/index'
 
-export { HomePage, Help, Favourites, Settings, ProductsPage, CategoriesPage, LoginPage , PageHeader , Table}
+export {
+  HomePage,
+  Help,
+  Favourites,
+  Settings,
+  CategoriesPage,
+  ProductsPage,
+  Login,
+}

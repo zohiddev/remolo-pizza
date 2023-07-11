@@ -10,8 +10,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const { pathname } = useLocation()
   const [activePage, setActivePage] = useState(pathname)
-  const { isAuth } = useSelector((state) => state)
-
+  const { isAuth } = useSelector((state) => state.auth)
 
   useEffect(() => {
     setActivePage(pathname)
@@ -27,9 +26,11 @@ export const Navbar = () => {
         <Logo additionalClasses={['navbar__logo']} />
         <BurgerIcon clickHandler={() => setIsOpen(!isOpen)} />
       </div>
+
       <PagesList
         pagesData={isAuth ? adminNavbarData : pagesData}
-        activePage={activePage} />
+        activePage={activePage}
+      />
     </div>
   )
 }

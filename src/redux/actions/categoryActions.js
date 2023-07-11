@@ -20,4 +20,3 @@ export const getProducts = createAsyncThunk(
     return response.data
   }
 )
-

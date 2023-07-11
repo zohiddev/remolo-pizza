@@ -14,7 +14,6 @@ const reducer = combineReducers({
   user: userSlice,
   settings: settingsSlice,
   auth: authSlice,
-
 })
 
 const store = configureStore({ reducer })
