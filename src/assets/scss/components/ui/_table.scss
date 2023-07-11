@@ -1,0 +1,11 @@
+.table{
+    width: 100%;
+    background-color: $grey--color;
+    margin: 16px 0 ;
+    border-radius: 12px;
+    padding: 12px;
+}
+td{
+    padding: 12px;
+    border-bottom: 1px solid $black--color;
+}

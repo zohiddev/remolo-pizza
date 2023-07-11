@@ -3,10 +3,10 @@
 *****************************/
 .product-card--mini {
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
   gap: px-to-rem(15px);
   flex-shrink: 0;
-  position: relative;
   max-width: 392px;
   padding: px-to-rem(13px);
   border-radius: 16px;
@@ -24,6 +24,7 @@
     @include flex(unset, space-between);
     flex-direction: column;
     flex: 1 1 auto;
+
   }
 
   &__name {

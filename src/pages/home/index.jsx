@@ -6,7 +6,7 @@ import {
   Header,
 } from '../../components'
 import { useDispatch, useSelector } from 'react-redux'
-import { getCategories, getProducts, loginRequest } from '../../redux/actions/categoryActions'
+import { getCategories, getProducts } from '../../redux/actions/categoryActions'
 
 export const HomePage = () => {
   const { categories, products } = useSelector((state) => state)
@@ -15,7 +15,6 @@ export const HomePage = () => {
   useEffect(() => {
     dispatch(getCategories())
     dispatch(getProducts())
-    dispatch(loginRequest())
   }, [])
 
   return (
