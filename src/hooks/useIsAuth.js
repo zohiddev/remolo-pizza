@@ -11,7 +11,7 @@ function useIsAuth() {
 
     return useMemo(() => {
         if (
-            Boolean(tokens.accessToken?.trim().length) &&
+            Boolean(tokens.accessToken?.trim()) &&
             Boolean(tokens.refreshToken?.trim())
         ) {
             dispatch(setAuth(true))
