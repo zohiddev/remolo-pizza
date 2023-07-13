@@ -1,10 +1,9 @@
 import {
-  formatCurrency,
-  getAbsolutePrice,
-  cartRemove,
+  removeCart,
   increaseCart,
   decreaseCart,
-} from "..";
+} from "../../redux/slices/cartSlice";
+import { formatCurrency, getAbsolutePrice } from "../../helpers";
 import { useDispatch } from "react-redux";
 import { Icon } from "../ui/Icon";
 import { Quantity } from "../ui/Quantity";
@@ -51,11 +50,11 @@ export const ProductCardMini = ({ product }) => {
           decrease={() =>
             quantity !== 1
               ? dispatch(decreaseCart(id))
-              : dispatch(cartRemove(id))
+              : dispatch(removeCart(id))
           }
         />
         <Icon
-          onClick={() => dispatch(cartRemove(id))}
+          onClick={() => dispatch(removeCart(id))}
           additionalClasses={["product-card--mini__icon close-icon"]}
         >
           {closeIconSvg}

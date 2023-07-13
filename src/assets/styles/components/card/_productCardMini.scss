@@ -1,18 +1,14 @@
-@use '../../mixins/mixins';
-@use '../../global/functions' as fn;
-@use '../../global/variables' as var;
-
 /*****************************
 ** Product Card Mini Styles **
 *****************************/
 .product-card--mini {
     display: flex;
     flex-direction: row;
-    gap: fn.px-to-rem(15px);
+    gap: px-to-rem(15px);
     flex-shrink: 0;
     position: relative;
     max-width: 392px;
-    padding: fn.px-to-rem(13px);
+    padding: px-to-rem(13px);
     border-radius: 16px;
     background-color: #fff;
     overflow: hidden;
@@ -28,17 +24,17 @@
             object-fit: contain;
         }
 
-        @include mixins.media(1440) {
+        @include media(1440) {
             max-width: 70px;
         }
     }
 
     &__content {
-        @include mixins.flex(unset, space-between);
+        @include flex(unset, space-between);
         flex-direction: column;
         flex: 1 1 auto;
 
-        @include mixins.media(1440) {
+        @include media(1440) {
             flex-direction: row;
             align-items: center;
             padding-right: 10px;
@@ -46,21 +42,21 @@
     }
 
     &__name {
-        @include mixins.font(16, 13, 500, fn.px-to-percent(24px));
-        color: var.$text--color;
+        @include font(16, 13, 500, px-to-percent(24px));
+        color: $text--color;
     }
 
     &__price {
         font-size: 14px;
         font-weight: 500;
         line-height: 18px;
-        color: var.$secondary-grey--color;
+        color: $secondary-grey--color;
     }
 
     &__quantity {
         max-width: 40px;
-        padding: fn.px-to-rem(5px) fn.px-to-rem(10px);
-        background-color: var.$bg--color;
+        padding: px-to-rem(5px) px-to-rem(10px);
+        background-color: $bg--color;
         border-radius: 5px;
         
         &,
@@ -68,15 +64,15 @@
             font-size: 14px;
             font-weight: 400;
             line-height: 21px;
-            color: var.$secondary-grey--color;
+            color: $secondary-grey--color;
         }
     }
 
     &__icon {
-        @include mixins.flex-center();
+        @include flex-center();
         position: absolute;
-        top: fn.px-to-rem(17px);
-        right: fn.px-to-rem(17px);
+        top: px-to-rem(17px);
+        right: px-to-rem(17px);
         width: 30px;
         height: 30px;
         border-radius: 50%;
@@ -87,14 +83,14 @@
         }
 
         &:hover {
-            background-color: var.$grey--color;
+            background-color: $grey--color;
             
             svg path {
-                fill: var.$main--color;
+                fill: $main--color;
             }
         }
 
-        @include mixins.media(1440) {
+        @include media(1440) {
             display: none;
         }
     }

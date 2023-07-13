@@ -1,7 +1,3 @@
-@use '../../mixins/mixins';
-@use '../../global/functions' as fn;
-@use '../../global/variables' as var;
-
 /******************
 ** Button Styles **
 ******************/
@@ -17,21 +13,21 @@
     }
 
     &--primary {
-        padding: fn.px-to-rem(16px) fn.px-to-rem(32px);
-        background-color: var.$primary-btn--color;
+        padding: px-to-rem(16px) px-to-rem(32px);
+        background-color: $primary-btn--color;
         font-size: 18px;
         font-weight: 600;
-        line-height: fn.px-to-percent(27px);
+        line-height: px-to-percent(27px);
         color: #fff;
 
         &:hover {
-            background-color: var.$black--color;
+            background-color: $black--color;
         }
     }
 
     &--danger {
-        padding: fn.px-to-rem(36px) fn.px-to-rem(14px);
-        background-color: var.$danger--color;
+        padding: px-to-rem(36px) px-to-rem(14px);
+        background-color: $danger--color;
         font-size: 16px;
         font-weight: 600;
         line-height: 24px;

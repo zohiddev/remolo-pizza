@@ -1,12 +1,8 @@
-@use '../../mixins/mixins';
-@use '../../global/functions' as fn;
-@use '../../global/variables' as var;
-
 /*************************
 ** Products List Styles **
 *************************/
 .products__list {
-    @include mixins.flex(flex-start, unset);
+    @include flex(flex-start, unset);
     flex: 1 1 auto;
     flex-wrap: wrap;
     gap: 20px;
@@ -22,7 +18,7 @@
         display: none;
     }
     
-    @include mixins.media(1440) {
+    @include media(1440) {
         padding-bottom: 80px;
 
         .product-card {
@@ -30,7 +26,7 @@
         }
     }
 
-    @include mixins.media(630) {
+    @include media(630) {
         gap: 10px;
         justify-content: space-between;
         padding-left: 24p;

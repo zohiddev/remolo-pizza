@@ -1,12 +1,8 @@
-@use '../../mixins/mixins';
-@use '../../global/functions' as fn;
-@use '../../global/variables' as var;
-
 /*************************
 ** Navbar Mobile Styles **
 *************************/
 .navbar {
-    @include mixins.media(920) {
+    @include media(920) {
         position: absolute;
         top: 0;
         left: -100%;
@@ -17,7 +13,7 @@
         background: #fff;
 
         &__logo-row {
-            @include mixins.flex(flex-start, space-between);
+            @include flex(flex-start, space-between);
             margin-bottom: 90px;
         }
 
@@ -50,8 +46,8 @@
                 width: 8px;
                 height: 8px;
                 border: {
-                    top: 2px solid var.$icon--color;
-                    right: 2px solid var.$icon--color;
+                    top: 2px solid $icon--color;
+                    right: 2px solid $icon--color;
                 };
                 transform: translateY(-50%) rotate(45deg);
             }
@@ -59,7 +55,7 @@
             &.active::after {
                 background-color: transparent;
                 border-radius: 0;
-                border-color: var.$main--color;
+                border-color: $main--color;
             }
     
             &__icon {

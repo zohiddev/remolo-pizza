@@ -1,12 +1,8 @@
-@use '../../mixins/mixins';
-@use '../../global/functions' as fn;
-@use '../../global/variables' as var;
-
 /****************
 ** Icon Styles **
 ****************/
 .icon.burger-menu {
-    @include mixins.flex(flex-end, space-between);
+    @include flex(flex-end, space-between);
     flex-direction: column;
     position: relative;
     width: 30px;
@@ -14,7 +10,7 @@
 
     .line {
         width: 100%;
-        border: 2px solid var.$icon--color;
+        border: 2px solid $icon--color;
         border-radius: 5px;
 
         &:last-child {

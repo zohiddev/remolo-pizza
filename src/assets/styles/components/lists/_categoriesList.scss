@@ -1,12 +1,8 @@
-@use '../../mixins/mixins';
-@use '../../global/functions' as fn;
-@use '../../global/variables' as var;
-
 /***************************
 ** Categories List Styles **
 ***************************/
 .categories__list {
-    @include mixins.flex(center, space-between);
+    @include flex(center, space-between);
     gap: 15px;
     position: relative;
     margin-top: 25px;

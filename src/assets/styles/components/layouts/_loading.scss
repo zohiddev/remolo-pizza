@@ -1,7 +1,3 @@
-@use '../../mixins/mixins';
-@use '../../global/functions' as fn;
-@use '../../global/variables' as var;
-
 /*******************
 ** Loading Styles **
 *******************/
@@ -23,7 +19,7 @@
     }
     
     .dots__wrapper {
-        @include mixins.flex(center, space-between);
+        @include flex(center, space-between);
         position: absolute;
         top: 50%;
         left: 50%;
@@ -34,10 +30,10 @@
     
         .dot {
             position: relative;
-            width: fn.px-to-rem(50px);
-            height: fn.px-to-rem(50px);
+            width: px-to-rem(50px);
+            height: px-to-rem(50px);
             border-radius: 50%;
-            background-color: var.$main--color;
+            background-color: $main--color;
             animation: loading .8s ease;
             animation-iteration-count: infinite;
         

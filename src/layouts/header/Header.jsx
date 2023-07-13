@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Input, BurgerIcon, Icon, navbarToggled } from "..";
+import { Input, BurgerIcon, Icon } from "../../components";
+import { toggleNavbar } from "../../redux/slices/layoutSlice";
 import { debounce } from "lodash";
-import searchIconSvg from "/src/assets/images/icons/search-icon.svg";
 import closeIconSvg from "/src/assets/images/icons/close-icon.svg";
-import { useEffect } from "react";
+import searchIconSvg from "/src/assets/images/icons/search-icon.svg";
 
 const SearchIcon = ({ onClick }) => {
   return (
@@ -47,7 +47,7 @@ export const Header = () => {
         </Icon>
       </div>
       <div className="header__mobile" id="header__mobile">
-        <BurgerIcon onClick={() => dispatch(navbarToggled())} />
+        <BurgerIcon onClick={() => dispatch(toggleNavbar())} />
         <SearchIcon onClick={() => setIsInputOpen(true)} />
       </div>
     </div>

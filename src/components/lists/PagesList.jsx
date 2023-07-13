@@ -1,10 +1,10 @@
-import { PageCard } from "../card/PageCard";
+import { PageCard } from "..";
 
-export const PagesList = ({ pages, activePage }) => {
+export const PagesList = ({ pages }) => {
   return (
     <ul className="pages__list">
       {pages.map((page) => (
-        <PageCard key={page.id} page={page} activePage={activePage} />
+        <PageCard key={page.id} page={page} />
       ))}
     </ul>
   );

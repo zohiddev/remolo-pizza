@@ -1,16 +1,16 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Header } from "../../layouts";
+import { setCategories as setCategoriesSlice } from "../../redux/slices/categorySlice";
+import { getApiUrl } from "../../helpers/Axios";
 import {
+  Loading,
+  CategoriesList,
   ProductsList,
   CardButtonMobile,
-  CategoriesList,
-  Header,
-  getApiUrl,
-  categoryAdded,
-  Loading,
   ProductsSkeletonList,
-} from "..";
-import axios from "axios";
+} from "../../components";
 
 export const HomePage = () => {
   const [categories, setCategories] = useState([]);
@@ -27,7 +27,9 @@ export const HomePage = () => {
       .get(getApiUrl("category/all/"))
       .then((response) => {
         setCategories(response.data);
-        response.data.forEach((category) => dispatch(categoryAdded(category)));
+        response.data.forEach((category) =>
+          dispatch(setCategoriesSlice(category))
+        );
       })
       .catch((error) => console.log(error))
       .finally(() => setLoadingCategories(false));

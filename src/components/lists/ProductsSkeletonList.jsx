@@ -1,4 +1,4 @@
-import { ProductSkeleton } from "../loading/ProductSkeleton";
+import { ProductSkeleton } from "..";
 
 export const ProductsSkeletonList = ({ count = 3 }) => {
   const countArr = [];

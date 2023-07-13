@@ -1,4 +1,4 @@
-import { formatCurrency } from "..";
+import { formatCurrency } from "../../helpers";
 
 export const CartCheckoutInfo = ({ text, price, icon }) => {
   return (

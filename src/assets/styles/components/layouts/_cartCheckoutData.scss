@@ -1,0 +1,29 @@
+.cart-checkout-data__wrapper {
+    position: relative;
+
+    .content__row {
+        @include flex(center, space-between, row);
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    
+    .cart-checkout-data__list {
+        @include flex(unset, unset, column);
+        gap: 20px;
+        position: relative;
+    
+        .cart-checkout-data {
+            @include flex(unset, unset, column);
+    
+            .title {
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 600;
+                color: #acacac;
+            }
+        }
+    }
+}

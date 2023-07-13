@@ -1,20 +1,16 @@
-@use '../../mixins/mixins';
-@use '../../global/functions' as fn;
-@use '../../global/variables' as var;
-
 /********************
 ** Quantity Styles **
 ********************/
 .quantity__wrapper {
-    @include mixins.flex(center, unset);
+    @include flex(center, unset);
     gap: 6px;
     position: relative;
 
     .quantity {
-        @include mixins.flex(center, center);
+        @include flex(center, center);
         width: 28px;
         height: 28px;
-        background-color: var.$icon--color;
+        background-color: $icon--color;
         border-radius: 8px;
 
         &__text {
@@ -30,6 +26,6 @@
         font-size: 16px;
         font-weight: 600;
         line-height: 24px;
-        color: var.$icon--color;
+        color: $icon--color;
     }
 }

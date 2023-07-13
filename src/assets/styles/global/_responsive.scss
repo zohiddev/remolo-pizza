@@ -1,27 +1,25 @@
-@use '../mixins/mixins';
-
 /**********************
 ** Responsive Styles **
 **********************/
-@include mixins.media(1024) {
+@include media(1024) {
     :root {
         font-size: 14px;
     }
 }
 
-@include mixins.media(900) {
+@include media(900) {
     :root {
         font-size: 13px;
     }
 }
 
-@include mixins.media(768) {
+@include media(768) {
     :root {
         font-size: 12px;
     }
 }
 
-@include mixins.media(600) {
+@include media(600) {
     :root {
         font-size: 11px;
     }

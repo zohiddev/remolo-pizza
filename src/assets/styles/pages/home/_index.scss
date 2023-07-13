@@ -1,6 +1,4 @@
-@use '../../mixins/mixins';
-@use '../../global/functions' as fn;
-@use '../../global/variables' as var;
+
 
 /*********************
 ** Home Page Styles **
@@ -23,7 +21,7 @@
         background-color: #fff;
         z-index: 99;
 
-        @include mixins.media(630) {
+        @include media(630) {
             padding-left: 24p;
             padding-right: 24px;
             padding-top: 24px;
@@ -45,9 +43,9 @@
         font-size: 26px;
         font-weight: 700;
         line-height: 39px;
-        color: var.$black--color;
+        color: $black--color;
 
-        @include mixins.media(630) {
+        @include media(630) {
             margin-top: 24px;
         }
     }
@@ -56,7 +54,7 @@
         font-size: 16px;
         font-weight: 600;
         line-height: 24px;
-        color: var.$icon--color;
+        color: $icon--color;
     }
 
     .cart-button__wrapper {
@@ -68,7 +66,7 @@
         height: 80px;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 50.52%);
 
-        @include mixins.media(1440) {
+        @include media(1440) {
             display: flex;
         }
 

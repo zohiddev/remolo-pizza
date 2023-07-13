@@ -1,5 +1,8 @@
-@use './components/components';
-@use './global/normalize';
-@use './global/settings';
-@use './global/responsive';
-@use './pages/pages';
+@import './mixins/mixins';
+@import './global/variables';
+@import './global/functions';
+@import './components/components';
+@import './global/normalize';
+@import './global/settings';
+@import './global/responsive';
+@import './pages/pages';

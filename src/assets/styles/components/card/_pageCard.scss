@@ -1,12 +1,8 @@
-@use '../../mixins/mixins';
-@use '../../global/functions' as fn;
-@use '../../global/variables' as var;
-
 /*********************
 ** Page Card Styles **
 *********************/
 .page {
-    @include mixins.flex(center, unset);
+    @include flex(center, unset);
     gap: 40px;
     position: relative;
     width: 100%;
@@ -21,7 +17,7 @@
         height: 36px;
     
         svg path {
-            fill: var.$icon--color;
+            fill: $icon--color;
         }
     }
     
@@ -29,7 +25,7 @@
         font-size: 16px;
         font-weight: 700;
         line-height: 24px;
-        color: var.$icon--color;
+        color: $icon--color;
     }
 
     &.active {
@@ -41,15 +37,15 @@
             width: 4px;
             height: 100%;
             border-radius: 5px;
-            background-color: var.$main--color;
+            background-color: $main--color;
         }
 
         svg path {
-            fill: var.$main--color;
+            fill: $main--color;
         }
 
         .page__text {
-            color: var.$main--color;
+            color: $main--color;
         }
     }
 }

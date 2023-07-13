@@ -1,28 +1,30 @@
 // Card
-@use './card/categoryCard';
-@use './card/pageCard';
-@use './card/productCard';
-@use './card/productCardMini';
+@import './card/categoryCard';
+@import './card/pageCard';
+@import './card/productCard';
+@import './card/productCardMini';
 
 // Form
-@use './form/input';
+@import './form/input';
 
 // Layouts
-@use './layouts/cart';
-@use './layouts/header';
-@use './layouts/loading';
-@use './layouts/navbar';
-@use './layouts/navbarMobile';
+@import './layouts/cart';
+@import './layouts/header';
+@import './layouts/loading';
+@import './layouts/navbar';
+@import './layouts/navbarMobile';
+@import './layouts/cartCheckoutData';
 
 // Lists
-@use './lists/cartProductsList';
-@use './lists/categoriesList';
-@use './lists/pagesList';
-@use './lists/productsList';
+@import './lists/cartProductsList';
+@import './lists/categoriesList';
+@import './lists/pagesList';
+@import './lists/productsList';
 
 // Ui
-@use './ui/burgerIcon';
-@use './ui/button';
-@use './ui/cartButton';
-@use './ui/icon';
-@use './ui/quantity';
+@import './ui/burgerIcon';
+@import './ui/button';
+@import './ui/cartButton';
+@import './ui/icon';
+@import './ui/quantity';
+@import './ui/alert';

@@ -1,5 +1,4 @@
-import { CartButton } from "../ui/CartButton";
-import { Icon } from "../ui/Icon";
+import { CartButton, Icon } from "..";
 
 export const CardButtonMobile = ({ onClick }) => {
   return (

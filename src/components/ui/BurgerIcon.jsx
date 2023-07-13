@@ -1,4 +1,4 @@
-import { Icon } from "./Icon";
+import { Icon } from "..";
 
 export const BurgerIcon = ({ onClick }) => {
   return (

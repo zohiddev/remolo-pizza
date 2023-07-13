@@ -1,6 +1,7 @@
-import { formatCurrency, getAbsolutePrice, cartAdd } from "..";
 import { useDispatch } from "react-redux";
-import { Icon } from "../ui/Icon";
+import { Icon } from "..";
+import { formatCurrency, getAbsolutePrice } from "../../helpers";
+import { setCart } from "../../redux/slices/cartSlice";
 
 const plusIconSvg = (
   <svg
@@ -35,7 +36,7 @@ export const ProductCard = ({ product }) => {
           {formatCurrency(discount ? getAbsolutePrice(price, discount) : price)}
         </p>
         <Icon
-          onClick={() => dispatch(cartAdd(product))}
+          onClick={() => dispatch(setCart(product))}
           additionalClasses={["product-card__icon add-to-cart"]}
         >
           {plusIconSvg}

@@ -1,11 +1,7 @@
-@use '../../mixins/mixins';
-@use '../../global/functions' as fn;
-@use '../../global/variables' as var;
-
 /****************
 ** Icon Styles **
 ****************/
 .icon {
-    color: var.$icon--color;
+    color: $icon--color;
     cursor: pointer;
 }
