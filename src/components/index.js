@@ -17,6 +17,7 @@ import { Drawer } from './ui/Drawer';
 import { FormGroup } from './form/FormGroup';
 import { TextArea } from './form/TextArea';
 import { Select } from './form/Select';
+import Modal from './ui/Modal';
 
 export {
   Layout,
@@ -37,5 +38,6 @@ export {
   Drawer,
   FormGroup,
   TextArea,
-  Select
+  Select,
+  Modal
 }

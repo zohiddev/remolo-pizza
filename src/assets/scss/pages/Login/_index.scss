@@ -2,6 +2,7 @@
   width: 100vw;
   height: 100vh;
   background-color: $white;
+  position: relative;
 
   &__container {
     width: 70%;
@@ -13,24 +14,36 @@
     justify-content: center;
   }
 
-  &__imageWrapper {
-    width: 500px;
-    height: 500px;
+  &__form {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    border-radius: 10px;
   }
 
-  &__image {
-    width: 100%;
-    height: 100%;
+  &__input {
+    width: 340px;
+    height: 50px;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    border-radius: 8px;
+    padding: 0 20px;
+  
+  }
+  &__button{
+    width: 80px;
+    height: 50px;
+    border: 1px solid $black-color;
+    border-radius: 10px;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+    &:hover{
+      border: 1px solid $blue-color;
+      color: $blue-color;
     }
   }
 
-  &__input,
-  &__button {
-    border: 1px solid #000;
-  }
 }

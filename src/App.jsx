@@ -25,6 +25,7 @@ function App() {
             : null}
         </Routes>
         {isCart.includes(pathname) ? <Cart /> : null}
+        <div className="modals"></div>
       </div>
     </>
   )
