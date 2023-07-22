@@ -19,7 +19,7 @@ export const Login = () => {
 
   const onSubmit = () => {
     if (formState.email.trim() === '' || formState.password.trim() === '') {
-      return alert("Yaz ahi bir narsa")
+      return alert("Maydonlarni to'ldiring")
     }
 
     dispatch(loginRequest(formState))
@@ -28,24 +28,33 @@ export const Login = () => {
   return (
     <div className='login-page'>
       <div className='login-page__container'>
-        
+        <div className='login-page__imageWrapper'>
+          <div className='login-page__image'>
+            <img src={loginImg} alt='login-img' />
+          </div>
+        </div>
+
         <div className='login-page__form'>
           <div className='login-page__formGroup'>
+            <label htmlFor='email' className='login-page__label'>
+              Email:
+            </label>
             <input
               type='email'
               name='email'
               id='email'
-              placeholder='Email:'
               onChange={onInputChange}
               className='login-page__input'
             />
           </div>
           <div className='login-page__formGroup'>
+            <label htmlFor='password' className='login-page__label'>
+              Password:
+            </label>
             <input
               type='password'
               name='password'
               id='password'
-              placeholder='Password'
               onChange={onInputChange}
               className='login-page__input'
             />

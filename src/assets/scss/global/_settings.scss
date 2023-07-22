@@ -55,7 +55,7 @@ button {
   position: relative;
   max-height: 100vh;
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 
   #main-content__row {
     @include flex(flex-start, unset);
