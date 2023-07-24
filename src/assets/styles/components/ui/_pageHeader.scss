@@ -1,0 +1,28 @@
+@use '../../../scss/mixins/mixins';
+@use '../../../scss/global/functions' as fn;
+@use '../../../scss/global/variables' as var;
+
+.pageHeader{
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    padding: 12px;
+    
+    &-row{
+        @include mixins.flex(center, space-between,);
+        background-color: white;
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    &-title{
+        font-size: 24px;
+    }
+}
+
+.space{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+}

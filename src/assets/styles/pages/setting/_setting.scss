@@ -1,0 +1,104 @@
+@use '../../../scss/mixins/mixins';
+@use '../../../scss/global/functions' as fn;
+@use '../../../scss/global/variables' as var;
+
+.settings {
+    width: 92%;
+    height: 100vh;
+    padding: 20px 0 0 45px;
+    &__row {
+        width: 100%;
+        @include mixins.flex(flex-start, flex-start, column);
+        .settings__title {
+            @include mixins.flex(flex-start, center, column);
+            &-text {
+                @include mixins.font(26, 26, 700, auto);
+                margin-bottom: 5px;
+                color: #353535;
+            }
+            &-desc {
+                @include mixins.font(16, 16, 600, auto);
+                color: #A6A6A6;
+            }
+        }
+        .settings__data {
+            @include mixins.flex(flex-start, center, column);
+            margin-top: 40px;
+            &__item {
+                @include mixins.flex(flex-start, center, column);
+                margin-bottom: 30px;
+                &-title, &-text {
+                    @include mixins.font(18, 18, 600, auto);
+                    color: #353535;
+                }
+                &-desc {
+                    @include mixins.font(16, 16, 500, auto);
+                    color: #A6A6A6;
+                    margin: 5px 0 15px;
+                }
+                .c {
+                   display: flex;
+                   align-items: center;
+                   gap: 15px;                    
+                }
+            }
+        }
+        .settings__theme {
+            @include mixins.flex(flex-start, center, column);
+            &-title {
+                @include mixins.font(18, 18, 600, auto);
+                color: #353535;
+            }
+            &-desc {
+                @include mixins.font(16, 16, 500, auto);
+                color: #A6A6A6;
+                margin: 5px 0 15px 0;
+            }
+            &__switch {
+                @import "../../../styles/components/ui/toggle_btn";
+            }
+        }
+    }
+}
+
+.color{
+    
+    &-buttons{
+        width: 200px;
+        margin-top: 16px;
+        display: flex;
+        // align-items: center;
+        justify-content: space-around;
+    }
+
+    &-button{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        &:hover{
+            width: 50px;
+            height: 50px;
+        }
+
+
+        &.red{
+            background-color: #ef4e4e;
+        }
+
+        &.yellow{
+            background-color: #efa73f;
+        }
+
+        &.blue{
+            background-color: #50c2e7;
+        }
+
+        &.active{
+            border: 1px solid black;
+        }
+    }
+}
+.user__btn{
+    background: none;
+    background-color: none;
+}

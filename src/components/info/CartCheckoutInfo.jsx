@@ -1,10 +1,12 @@
 import { formatCurrency } from "..";
 
-export const CartCheckoutInfo = ({ text, price, icon }) => {
+
+
+export const CartCheckoutInfo = ({ text, price }) => {
   return (
     <div className="cart__checkout-info">
       <p className="text">
-        {text} {icon && icon}
+        {text} 
       </p>
       <p className="price">{formatCurrency(price)}</p>
     </div>

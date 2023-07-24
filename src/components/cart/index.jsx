@@ -1,26 +1,28 @@
-import { Icon } from "../ui/Icon";
+import { useSelector} from 'react-redux'
 import { CartProductsList } from "../lists/CartProductsList";
-import { CartCheckout } from "../actions/CartCheckout";
-import deleteIconSvg from "/src/assets/images/icons/delete-icon.svg";
+import { useState } from "react";
+import OrederCard from "../card/OrederCard";
 
-export const Cart = ({ cartProductsData, store }) => {
-  const delivery = 100;
-  const total = 1650;
 
+export const Cart = () => {
+  const  [ isChekout, setIsChekout] = useState(false)
+  const {cart}  = useSelector(state => state);
+  const cartProductsData = cart.items;
   return (
     <div className="cart">
       <h2 className="cart__title">Mi orden</h2>
-      <div className="cart__action-row">
-        <div className="text__wrapper">
-          <p className="cart__description">Listado del pedido</p>
-          <p className="cart__quantity">{cartProductsData?.length} items</p>
-        </div>
-        <Icon>
-          <img src={deleteIconSvg} alt="delete icon" />
-        </Icon>
+      {
+        isChekout ? <OrederCard setIsChekout={setIsChekout} /> : <CartProductsList cartProductsData={cartProductsData}  />
+      }       
+      <div className="cart-chek__btn">
+        <button className='chek_btn' onClick={() => {cart.items.length > 0 ? setIsChekout(true) : ''}}>
+          <h1>{
+            isChekout ? 'Generar recibo' : 'Ir al checkout'
+            }</h1>
+        </button>
       </div>
-      <CartProductsList cartProductsData={cartProductsData} store={store}/>
-      <CartCheckout delivery={delivery} total={total} />
+      {/* <CartCheckout   total={total} /> */}
     </div>
+    
   );
 };

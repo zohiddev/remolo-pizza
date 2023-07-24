@@ -1,6 +1,6 @@
 import { CategoryCard } from "../card/CategoryCard";
 
-export const CategoriesList = ({ categoriesData, activeCategory, store }) => {
+export const CategoriesList = ({ categoriesData, activeCategory }) => {
   return (
     <div className="categories__list">
       {categoriesData.map((category) => (
@@ -8,7 +8,6 @@ export const CategoriesList = ({ categoriesData, activeCategory, store }) => {
           key={category.id}
           data={category}
           activeCategory={activeCategory}
-          store={store}
         />
       ))}
     </div>

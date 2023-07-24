@@ -1,26 +1,40 @@
-import { formatCurrency, getAbsolutePrice } from "..";
-import { decreaseQtyAC, deleteCartAC, increaseQtyAC } from "../../redux/actions/cartActions";
-import { QuantitySelect } from "../selects/QuantitySelect";
+// import { formatCurrency, getAbsolutePrice } from "..";
 import { Icon } from "../ui/Icon";
 import { Quantity } from "../ui/Quantity";
+import { decreaseQty, deleteCart, increaseQty } from "../../redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
+import { getAbsolutePrice } from "../../helpers/getAbsolutePrice";
+import { formatCurrency } from "../../helpers/formatCurrency";
 
-export const ProductCardMini = ({ product, store }) => {
-  const { image, name, price, discount, qty, id } = product;
+export const ProductCardMini = ({ product }) => {
+  const {
+    image,
+    name,
+    price,
+    discount,
+    qty,
+    id
+  } = product;
 
-  const handleCartItemDelete = (id) => {
-    store.dispatch(deleteCartAC({ id }))
+  const dispatch = useDispatch();
+
+
+
+  
+  const handelCartItemDelete = (id) => {
+    dispatch(deleteCart({id}));
   }
 
   const handleIncrease = () => {
-    store.dispatch(increaseQtyAC({ id }))
+    dispatch(increaseQty({id}))
   }
 
   const handleDecrease = () => {
-    store.dispatch(decreaseQtyAC({ id }))
+    dispatch(decreaseQty({id}))
   }
 
   return (
-    <div className="product-card--mini">
+    <div className="product-card--mini mobile">
       <div className="product-card--mini__img img">
         <img src={image} alt={name} />
       </div>
@@ -33,8 +47,8 @@ export const ProductCardMini = ({ product, store }) => {
             )}
           </p>
         </div>
-        <Quantity increase={handleIncrease} decrease={handleDecrease} quantity={qty} />
-        <Icon clickHandler={() => handleCartItemDelete(id)} additionalClasses={["product-card--mini__icon close-icon"]}>
+        <Quantity increase={handleIncrease} decrease={handleDecrease} quantity={qty}  />
+        <Icon clickHandler={() => handelCartItemDelete(id)} additionalClasses={["product-card--mini__icon close-icon"]}>
           <svg
             width="12"
             height="12"

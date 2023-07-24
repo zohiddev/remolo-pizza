@@ -1,21 +1,12 @@
-import { HomePage } from "./home";
-import { Input } from '../components/form/Input';
-import { Icon } from '../components/ui/Icon';
-import { CartButton } from '../components/ui/CartButton';
-import { ProductCard } from "../components/card/ProductCard";
-import { ProductsList } from "../components/lists/ProductsList";
-import { CardButtonMobile } from "../components/card/CardButtonMobile";
-import { CategoriesList } from "../components/lists/CategoriesList";
-import { Header } from "../components/header";
+import { HomePage } from "../pages/home/index";
+import { FavouritePage } from "../pages/favourite/index";
+import { PageNotFound } from "../pages/notFound/404";
+import { SettingPage } from "../pages/setting/index";
+import { HelperPage } from "../pages/helper/index";
+import { CategoriesPage } from "../pages/categories/index";
+import { ProductsPage } from "../pages/products/index";
+import { LoginPage } from "../pages/login/index";
 
-export {
-    HomePage,
-    Input,
-    Icon,
-    ProductCard,
-    CartButton,
-    ProductsList,
-    CardButtonMobile,
-    CategoriesList,
-    Header
-};
+
+
+export { HomePage,FavouritePage, PageNotFound, SettingPage, HelperPage, CategoriesPage, ProductsPage, LoginPage }

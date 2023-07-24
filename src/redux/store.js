@@ -1,36 +1,22 @@
-import { categoriesData } from "../data/categories";
-import products from "../data/products.json"
-import CartReducers from "./reducers/cardReducers";
-import CategoriesReducers from "./reducers/categoriesReducers";
-import ProductReducers from "./reducers/productReducers";
+import {combineReducers} from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import categoriesSlice from './slices/categoriesSlice';
+import productsSlice from './slices/productsSlice';
+import cartSlice from './slices/cartSlice';
+import userSlice from './slices/userSlice';
+import settingSlice from './slices/settingSlice';
+import authSlice from './slices/authSlice';
+
+const reducer = combineReducers({
+    categories: categoriesSlice,
+    products: productsSlice,
+    cart: cartSlice,
+    user: userSlice,
+    setting: settingSlice,
+    auth: authSlice,
+});
+
+const store = configureStore({reducer});
 
 
-export const store = {
-    _state: {
-        categories: {
-            activeCategory: "Pizza",
-            items: categoriesData,
-        },
-        products: {
-            items: products
-        },
-        cart: {
-            items: [],
-        },
-    },
-
-    render: () => { console.log('hello') },
-
-    getState: () => store._state,
-
-    dispatch: (action) => {
-        store._state.categories = CategoriesReducers(store._state.categories,action)
-        store._state.products = ProductReducers(store._state.products, action)
-        store._state.cart = CartReducers(store._state.cart, action)
-        store.render()
-    },
-
-    subscribe: (collback) => {
-        store.render = collback
-    }
-}
+export  default store;

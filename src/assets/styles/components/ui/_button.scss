@@ -1,0 +1,59 @@
+@use '../../../scss/mixins/mixins';
+@use '../../../scss/global/functions' as fn;
+@use '../../../scss/global/variables' as var;
+
+/******************
+** Button Styles **
+******************/
+.button {
+    text-align: center;
+    border-radius: 50px;
+    transition: all .3s ease;
+    cursor: pointer;
+    background-color: transparent;
+
+    &--primary {
+        padding: fn.px-to-rem(16px) fn.px-to-rem(32px);
+        background-color: var.$primary-btn--color;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: fn.px-to-percent(27px);
+        color: #fff;
+
+        &:hover {
+            background-color: var.$black--color;
+        }
+    }
+}
+
+/********************
+** Quantity Styles **
+********************/
+.quantity__wrapper {
+    @include mixins.flex(center, unset);
+    gap: 6px;
+    position: relative;
+
+    .quantity {
+        @include mixins.flex(center, center);
+        width: 28px;
+        height: 28px;
+        background-color: var.$icon--color;
+        border-radius: 8px;
+
+        &__text {
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 15px;
+            color: #fff;
+        }
+    }
+
+    .decrease,
+    .increase {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var.$icon--color;
+    }
+}

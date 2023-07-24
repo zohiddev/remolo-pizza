@@ -1,0 +1,186 @@
+@use '../../../scss/mixins/mixins';
+@use '../../../scss/global/functions' as fn;
+@use '../../../scss/global/variables' as var;
+
+/*************************
+** Category Card Styles **
+*************************/
+.category {
+    @include mixins.flex(center, unset);
+    display: inline-flex;
+    gap: 15px;
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+
+    @include mixins.media(630) {
+        &__name {
+            display: none;
+        }
+
+        &__icon {
+            @include mixins.flex-center();
+            width: 50px;
+            height: 50px;
+            background-color: #E8E8E8;
+            border-radius: 16px;
+        }
+
+        &::after,
+        &::before {
+            display: none;
+        }
+
+        &.active {
+            .category__icon {
+                background-color: var.$main--color;
+
+                svg path {
+                    fill: #fff;
+                }
+            }
+        }
+    }
+
+    svg path {
+        fill: var.$black--color;
+    }
+
+    &__name {
+        font-size: fn.px-to-rem(18px);
+        font-weight: 600;
+        line-height: fn.px-to-percent(27px, 18px);
+        color: var.$black--color;
+    }
+
+    &.active {
+        svg path {
+            fill: var.$main--color;
+        }
+
+        .category__name {
+            color: var.$main--color;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            border: 1px solid var.$main--color;
+            border-radius: 5px;
+        }
+
+        &.red{
+            &::after{
+                border: 1px solid #ef4e4e;
+            }
+
+            svg path {
+                fill: #ef4e4e;
+            }
+    
+            .category__name {
+                color: #ef4e4e;
+            }
+        }
+
+        &.yellow{
+            &::after{
+                border: 1px solid #efa73f;
+            }
+
+            svg path {
+                fill: #efa73f;
+            }
+    
+            .category__name {
+                color: #efa73f;
+            }
+
+        }
+
+        &.blue{
+            &::after{
+                border: 1px solid #50c2e7;
+            }
+
+            svg path {
+                fill: #50c2e7;
+            }
+    
+            .category__name {
+                color: #50c2e7;
+            }
+        }
+    }
+}
+
+// @include mixins.media(630) {
+//     .category{
+//         &.active {
+//             svg path {
+//                 fill: var.$main--color;
+//             }
+    
+//             .category__name {
+//                 color: var.$main--color;
+//             }
+    
+//             &::after {
+//                 content: '';
+//                 position: absolute;
+//                 left: 0;
+//                 bottom: 0;
+//                 width: 100%;
+//                 border: 1px solid var.$main--color;
+//                 border-radius: 5px;
+//             }
+    
+//             &.red{
+//                 &::after{
+//                     border: 1px solid #ef4e4e;
+//                 }
+    
+//                 svg path {
+//                     fill: #ef4e4e;
+//                 }
+        
+//                 .category__name {
+//                     color: #ef4e4e;
+//                 }
+//             }
+    
+//             &.yellow{
+//                 &::after{
+//                     border: 1px solid #efa73f;
+//                 }
+    
+//                 svg path {
+//                     fill: #efa73f;
+//                 }
+        
+//                 .category__name {
+//                     color: #efa73f;
+//                 }
+    
+//             }
+    
+//             &.blue{
+//                 &::after{
+//                     border: 1px solid #50c2e7;
+//                 }
+    
+//                 svg path {
+//                     fill: #50c2e7;
+//                 }
+        
+//                 .category__name {
+//                     color: #50c2e7;
+//                 }
+//             }
+//         }
+//     }
+// }

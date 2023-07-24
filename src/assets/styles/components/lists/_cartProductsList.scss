@@ -1,0 +1,38 @@
+@use '../../../scss/mixins/mixins';
+@use '../../../scss/global/functions' as fn;
+@use '../../../scss/global/variables' as var;
+
+/******************************
+** Cart Products List Styles **
+******************************/
+.cart-products__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 90%;
+    position: relative;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1 1 auto;
+
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .pust{
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .cart-sum{
+        display: flex;
+        justify-content: space-between;
+        color: #353535;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+    }
+}

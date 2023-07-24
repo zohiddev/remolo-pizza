@@ -1,0 +1,44 @@
+.categories{
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+    overflow-y: scroll;
+
+    &-container{
+        max-width: 1160px;
+        width: 100%;
+        margin: 0 auto;
+        padding:  0 20px;
+    }
+
+    button{
+        padding: 8px 15px;
+        border: 1px solid black;
+        border-radius: 12px;
+    }
+
+    input {
+        border: 2px solid black;
+        padding: 5px 20px;
+        margin-left: 20px;
+        border-radius: 3px;
+    }
+
+    .image-input{
+        padding: 40px 20px;
+    }
+
+    .form-group{
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+
+    .space{
+        display: flex;
+        justify-content: end;
+    }
+}

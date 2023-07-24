@@ -1,16 +1,22 @@
-import { setActiveCategotyAC } from "../../redux/actions/cartActions";
-import { Icon } from "../ui/Icon";
 
-export const CategoryCard = ({ data, activeCategory, store }) => {
-  const { id, icon, name } = data
+import { setActiveCategory } from "../../redux/slices/categoriesSlice";
+import {useDispatch, useSelector} from 'react-redux';
+import { IconInnerHtml } from "../ui/IconInnerHtml";
 
-  const handleCategoryChange = () => {
-    store.dispatch(setActiveCategotyAC({categoryName: name}))
-  }
+export const CategoryCard = ({ data, activeCategory }) => {
+  const {setting} = useSelector((state) => state)
+  const { icon, name } = data;
+  const dispatch = useDispatch();
 
+  const handleCategoryChange = (name) => {
+    dispatch(setActiveCategory(name) );  
+  };
   return (
-    <button className={`category ${data.name === activeCategory ? "active" : ""}`} onClick={handleCategoryChange}>
-      <Icon additionalClasses={["category__icon"]}>{icon}</Icon>
+    <button 
+      className={`category ${data.id === activeCategory ? "active " + setting.color : ""}`}
+      onClick={() => handleCategoryChange(data.id)}
+    >
+      <IconInnerHtml additionalClasses={["category__icon"]} type="innerHtml">{icon}</IconInnerHtml>
       <h4 className="category__name">{name}</h4>
     </button>
   );

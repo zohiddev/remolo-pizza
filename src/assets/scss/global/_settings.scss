@@ -44,18 +44,11 @@ img {
   }
 }
 
-button {
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-
 #root {
   @include mixins.flex(flex-start, unset);
   position: relative;
   max-height: 100vh;
   height: 100%;
-  overflow: hidden;
 
   #main-content__row {
     @include mixins.flex(flex-start, unset);
@@ -70,4 +63,8 @@ button {
   max-width: 1180px;
   padding: 0 20px;
   margin: 0 auto;
+}
+
+.main{
+  flex: 1 1 auto;
 }

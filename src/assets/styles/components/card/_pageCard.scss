@@ -1,0 +1,97 @@
+@use '../../../scss/mixins/mixins';
+@use '../../../scss/global/functions' as fn;
+@use '../../../scss/global/variables' as var;
+
+/*********************
+** Page Card Styles **
+*********************/
+.page {
+    @include mixins.flex(center, unset);
+    gap: 40px;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    padding: 0 25px;
+    cursor: pointer;
+
+    &__icon {
+        position: relative;
+        display: inline-flex;
+        width: 36px;
+        height: 36px;
+    
+        svg path {
+            fill: var.$icon--color;
+        }
+    }
+    
+    &__text {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        color: var.$icon--color;
+    }
+
+    &.active {
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            border-radius: 5px;
+            background-color: var.$main--color;
+        }
+
+        svg path {
+            fill: var.$main--color;
+        }
+
+        .page__text {
+            color: var.$main--color;
+        }
+
+        &.red{
+            &::after{
+                background-color: #ef4e4e;
+            }
+
+            svg path {
+                fill: #ef4e4e;
+            }
+    
+            .page__text {
+                color: #ef4e4e;
+            }
+        }
+
+        &.yellow{
+            &::after{
+                background-color: #efa73f;
+            }
+
+            svg path {
+                fill: #efa73f;
+            }
+    
+            .page__text {
+                color: #efa73f;
+            }
+        }
+
+        &.blue{
+            &::after{
+                background-color: #50c2e7;
+            }
+
+            svg path {
+                fill: #50c2e7;
+            }
+    
+            .page__text {
+                color: #50c2e7;
+            }
+        }
+    }
+}

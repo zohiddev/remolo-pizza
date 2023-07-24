@@ -1,0 +1,19 @@
+.alert-modal{
+    position: absolute;
+    padding: 10px 16px;
+    height: 30px;
+    left: 50%;
+    top: -100%;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    transform: translateX(-50%);
+    box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.2), 0 6px 16px 0 rgba(0, 0, 0, 0.2), 0 9px 28px 8px rgba(0, 0, 0, 0.2);
+    pointer-events: all;
+    &.active{
+        top: 30px;
+    }
+}
+

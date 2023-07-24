@@ -1,0 +1,11 @@
+@use '../../../scss/mixins/mixins';
+@use '../../../scss/global/variables' as var;
+@use '../../../scss/global/functions' as fn;
+
+/****************
+** Icon Styles **
+****************/
+.icon {
+    color: var.$icon--color;
+    cursor: pointer;
+}

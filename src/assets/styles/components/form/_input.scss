@@ -1,0 +1,43 @@
+@use '../../../scss/mixins/mixins';
+@use '../../../scss/global/functions' as fn;
+@use '../../../scss/global/variables' as var;
+
+/*****************
+** Input Styles **
+*****************/
+.input {
+    @include mixins.flex(center, unset);
+    gap: 18px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+
+
+    &.search {
+        background-color: var.$secondary-bg--color;
+        border-radius: 10px;
+        padding: 12px 24px;
+
+
+
+        .icon {
+            height: 100%;
+        }
+    }
+
+    input {
+        flex: 1 1 auto;
+        height: 100%;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: fn.px-to-percent(24px);
+        color: var.$icon--color;
+        background: #f6f6f6;
+        padding: 19px 27px;
+        color: black;
+
+        &::placeholder {
+            color: #a6a6a6;
+        }
+    }
+}

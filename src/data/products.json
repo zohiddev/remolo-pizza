@@ -53,7 +53,7 @@
         "name": "Pizza jamón y morrón",
         "price": 900,
         "discount": null,
-        "category": "Empanadas"
+        "category": "Bebidas"
     },
     {
         "id": 8,
@@ -61,6 +61,6 @@
         "name": "Pizza jamón y morrón",
         "price": 900,
         "discount": null,
-        "category": "Empanadas"
+        "category": "Bebidas"
     }
 ]
