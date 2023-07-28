@@ -1,4 +1,4 @@
-import { applyMiddleware, combineReducers } from 'redux'
+import { combineReducers } from 'redux'
 import { configureStore } from '@reduxjs/toolkit'
 import categoriesSlice from './slices/categoriesSlice'
 import productsSlice from './slices/productsSlice'
